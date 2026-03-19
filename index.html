@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <style>
         body {
@@ -84,7 +85,8 @@
     <script>
         window.KORA_SITE_CONFIG = {
             apiBaseUrl: "http://localhost:8000",
-            businessId: "67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2"
+            businessId: "67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2",
+            recaptchaSiteKey: "6LfRt44sAAAAACVTvFvGjoufmEcZqZk_pT4T_5Xd"
         };
     </script>
 </head>
@@ -99,7 +101,7 @@
                 <a href="#about" class="text-gray-700 hover:text-primary transition">About</a>
                 <a href="#events" class="text-gray-700 hover:text-primary transition">Events</a>
                 <a href="#gallery" class="text-gray-700 hover:text-primary transition">Gallery</a>
-                <a href="contact.html" class="text-gray-700 hover:text-primary transition">Contact</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition">Contact</a>
             </nav>
             <a href="#menu" class="hidden md:inline-block bg-primary text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition">Explore Our Menu</a>
             <button id="mobile-menu-button" class="md:hidden">
@@ -112,7 +114,7 @@
             <a href="#about" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">About</a>
             <a href="#events" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Events</a>
             <a href="#gallery" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Gallery</a>
-            <a href="contact.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Contact</a>
+            <a href="#contact" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Contact</a>
             <a href="#menu" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Explore Our Menu</a>
         </div>
     </header>
@@ -236,6 +238,64 @@
                     </div>
                     <p class="text-lg text-gray-600 italic mb-4">"Average rating of 5 out of 5 stars."</p>
                     <p class="font-semibold text-secondary">- Customer Average</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold font-serif text-secondary">Get In Touch</h2>
+                    <p class="text-lg text-gray-600 mt-4">We'd love to hear from you. Send us a message or visit us at our location.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-3xl font-bold font-serif text-primary mb-6">Send a Message</h3>
+                        <form id="contact-form" novalidate>
+                            <div class="mb-4">
+                                <label for="fullName" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <div class="g-recaptcha" data-sitekey="6LfRt44sAAAAACVTvFvGjoufmEcZqZk_pT4T_5Xd"></div>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition">Send Message</button>
+                            </div>
+                            <p id="contact-form-message" class="text-center mt-4 h-5"></p>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info & Map -->
+                    <div class="space-y-8">
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold font-serif text-primary mb-4">Our Location</h3>
+                            <p class="text-gray-600 mb-4">1/2, sarvoday complex, Ahmedabad - Palanpur Hwy, Manglaytan Society, Mehsana, Gujarat 384002, India</p>
+                            <p class="text-gray-600"><strong>Email:</strong> info@maganlalbhakhrishakwala.com</p>
+                        </div>
+                        <div class="rounded-lg shadow-lg overflow-hidden h-96">
+                            <iframe
+                                src="https://maps.google.com/maps?q=23.5865,72.3893&z=16&output=embed"
+                                width="100%"
+                                height="100%"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -474,6 +534,86 @@
 
             renderCalendar();
             renderEventList();
+        });
+
+        // Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const messageEl = document.getElementById('contact-form-message');
+            const fullName = form.elements.fullName.value.trim();
+            const email = form.elements.email.value.trim();
+            const message = form.elements.message.value.trim();
+            const captchaToken = grecaptcha.getResponse();
+
+            function showMessage(msg, isError = false) {
+                messageEl.textContent = msg;
+                messageEl.style.color = isError ? '#f87171' : '#4ade80';
+            }
+
+            // Validation
+            if (!fullName) {
+                showMessage('Please enter your full name.', true);
+                return;
+            }
+            if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+                showMessage('Please enter a valid email address.', true);
+                return;
+            }
+            if (!message) {
+                showMessage('Please enter your message.', true);
+                return;
+            }
+            if (!captchaToken) {
+                showMessage('Please complete the reCAPTCHA.', true);
+                return;
+            }
+
+            const cfg = window.KORA_SITE_CONFIG || {};
+            const apiBaseUrl = (cfg.apiBaseUrl || '').replace(/\/+$/, '');
+            const businessId = cfg.businessId;
+
+            if (!apiBaseUrl || !businessId) {
+                showMessage('Form is not configured correctly. Please contact us directly.', true);
+                return;
+            }
+
+            showMessage('Sending message...', false);
+            form.querySelector('button[type="submit"]').disabled = true;
+
+            fetch(apiBaseUrl + '/api/v1/public/forms/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    business_id: businessId,
+                    form_type: 'contact',
+                    form_data: {
+                        fullName: fullName,
+                        email: email,
+                        message: message
+                    },
+                    submitter_email: email,
+                    captcha_token: captchaToken
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Network response was not ok.');
+            })
+            .then(data => {
+                showMessage('Thank you! Your message has been sent.', false);
+                form.reset();
+                grecaptcha.reset();
+            })
+            .catch(error => {
+                showMessage('An error occurred. Please try again later.', true);
+            })
+            .finally(() => {
+                form.querySelector('button[type="submit"]').disabled = false;
+            });
         });
 
         // Newsletter form
