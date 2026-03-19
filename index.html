@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maganlal Bhakhri Shak Wala, Gayatri Restaurant - Authentic Gujarati Cuisine</title>
+    <meta name="description" content="Maganlal Bhakhri Shak Wala, Gayatri Restaurant serves authentic Gujarati cuisine in Mehsana. A compact establishment dishing up regional specialties in down-to-earth surroundings.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Maganlal Bhakhri Shak Wala, Gayatri Restaurant - Authentic Gujarati Cuisine">
+    <meta property="og:description" content="Maganlal Bhakhri Shak Wala, Gayatri Restaurant serves authentic Gujarati cuisine in Mehsana. A compact establishment dishing up regional specialties in down-to-earth surroundings.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1773637605_vssmr8.jpeg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-primary { background-color: #3129a8; }
+        .text-primary { color: #3129a8; }
+        .border-primary { border-color: #3129a8; }
+        .bg-secondary { background-color: #3c3b3f; }
+        .text-secondary { color: #3c3b3f; }
+        .bg-accent { background-color: #7e5798; }
+        .text-accent { color: #7e5798; }
+        .calendar-day-event {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #3129a8;
+            margin: 2px auto 0;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Maganlal Bhakhri Shak Wala, Gayatri Restaurant",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1/2, sarvoday complex, Ahmedabad - Palanpur Hwy, Manglaytan Society",
+        "addressLocality": "Mehsana",
+        "addressRegion": "Gujarat",
+        "postalCode": "384002",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 23.5865,
+        "longitude": 72.3893
+      },
+      "image": "https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1773637605_vssmr8.jpeg",
+      "servesCuisine": "Gujarati",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "11:00",
+          "closes": "22:00"
+        }
+      ],
+      "telephone": "",
+      "email": "info@maganlalbhakhrishakwala.com",
+      "url": "#"
+    }
+    </script>
+    <script>
+        window.KORA_SITE_CONFIG = {
+            apiBaseUrl: "http://localhost:8000",
+            businessId: "67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2"
+        };
+    </script>
+</head>
+<body class="bg-gray-50 text-secondary">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary font-serif">Maganlal Bhakhri Shak Wala</a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-gray-700 hover:text-primary transition">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-primary transition">About</a>
+                <a href="#events" class="text-gray-700 hover:text-primary transition">Events</a>
+                <a href="#gallery" class="text-gray-700 hover:text-primary transition">Gallery</a>
+                <a href="contact.html" class="text-gray-700 hover:text-primary transition">Contact</a>
+            </nav>
+            <a href="#menu" class="hidden md:inline-block bg-primary text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition">Explore Our Menu</a>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="index.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Home</a>
+            <a href="#about" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">About</a>
+            <a href="#events" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Events</a>
+            <a href="#gallery" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Gallery</a>
+            <a href="contact.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Contact</a>
+            <a href="#menu" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Explore Our Menu</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[80vh] min-h-[500px] bg-cover bg-center text-white" style="background-image: url('https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1773637605_vssmr8.jpeg');">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div class="relative container mx-auto px-6 h-full flex flex-col justify-center items-center text-center">
+                <h1 class="text-4xl md:text-6xl font-bold font-serif leading-tight mb-4">Maganlal's Most Delightful Bhakhari</h1>
+                <p class="text-lg md:text-2xl mb-8">Authentic Gujarati Cuisine, made with passion.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#menu" class="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition">Explore Our Menu</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mann+Bhakhari,Mehsana,Gujarat" target="_blank" class="bg-white text-primary px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition">Get Directions</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold font-serif mb-6 text-secondary">Taste of Tradition</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
+                    Compact establishment dishing up regional specialties in down-to-earth surroundings. Maganlal Bhakhri Shak Wala, Gayatri Restaurant specializes in traditional Gujarati cuisine, particularly known for its bhakhri (a type of flatbread) and various shaks (vegetable preparations). The menu likely features a range of vegetarian dishes, thalis, and local specialties.
+                </p>
+            </div>
+        </section>
+
+        <!-- Offers Section -->
+        <section id="offers" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold font-serif text-center mb-12 text-secondary">Special Offers</h2>
+                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden md:flex">
+                    <div class="md:w-1/2">
+                        <img class="h-64 w-full object-cover md:h-full" src="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1772016358_r7iwd9.jpeg" alt="Birthday Special Offer">
+                    </div>
+                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold font-serif text-primary mb-2">Birthday Special</h3>
+                        <p class="text-gray-600 mb-4">Make your special day unforgettable with our authentic Gujarati cuisine. Book your birthday celebration with us and receive a special discount and a complimentary dessert for the birthday person!</p>
+                        <p class="text-xl font-semibold text-accent">15% off for groups of 4+</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Events Section -->
+        <section id="events" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold font-serif text-center mb-12 text-secondary">Upcoming Events</h2>
+                
+                <!-- Tabs -->
+                <div class="flex justify-center mb-8 border-b">
+                    <button id="calendar-tab" class="px-6 py-3 text-lg font-medium border-b-2 border-primary text-primary">Calendar</button>
+                    <button id="list-tab" class="px-6 py-3 text-lg font-medium text-gray-500 border-b-2 border-transparent hover:text-primary">List</button>
+                </div>
+
+                <!-- Calendar View -->
+                <div id="calendar-view">
+                    <div class="bg-white p-4 sm:p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center justify-between mb-6">
+                            <button id="prev-month" class="p-2 rounded-full hover:bg-gray-100"><i data-lucide="chevron-left"></i></button>
+                            <h3 id="month-year" class="text-xl sm:text-2xl font-bold text-secondary"></h3>
+                            <button id="next-month" class="p-2 rounded-full hover:bg-gray-100"><i data-lucide="chevron-right"></i></button>
+                        </div>
+                        <div id="calendar-grid" class="grid grid-cols-7 gap-1 text-center">
+                            <!-- Day names will be injected here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- List View -->
+                <div id="list-view" class="hidden">
+                    <div id="event-list-container" class="space-y-6 max-w-4xl mx-auto">
+                        <!-- Event list items will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Modal -->
+        <div id="event-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+            <div id="event-modal-content" class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
+                <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                    <i data-lucide="x"></i>
+                </button>
+                <div id="modal-body" class="p-8">
+                    <!-- Event details will be injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold font-serif text-center mb-12 text-secondary">Our Gallery</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://deveusblob.blob.core.windows.net/kora-business-images/generated/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/instagram_1771612214_f9031f67_0.jpeg" alt="Gallery image 1" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1772016358_r7iwd9.jpeg" alt="Gallery image 2" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1773637605_vssmr8.jpeg" alt="Gallery image 3" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold font-serif mb-12 text-secondary">What Our Customers Say</h2>
+                <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
+                    <div class="flex justify-center mb-4">
+                        <i data-lucide="star" class="text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-lg text-gray-600 italic mb-4">"Average rating of 5 out of 5 stars."</p>
+                    <p class="font-semibold text-secondary">- Customer Average</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold font-serif mb-4">Maganlal Bhakhri Shak Wala</h3>
+                    <p class="text-gray-300">1/2, sarvoday complex, Ahmedabad - Palanpur Hwy, Manglaytan Society, Mehsana, Gujarat 384002, India</p>
+                    <p class="text-gray-300 mt-2">Email: info@maganlalbhakhrishakwala.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold font-serif mb-4">Opening Hours</h3>
+                    <p class="text-gray-300">Tuesday - Sunday: 11:00 AM - 10:00 PM</p>
+                    <p class="text-gray-300">Monday: Closed</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold font-serif mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/maganlalbhakhrishakwala" target="_blank" class="text-gray-300 hover:text-white"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8">
+                <div class="max-w-md mx-auto">
+                    <h3 class="text-lg font-semibold text-center mb-4">Join Our Newsletter</h3>
+                    <form id="newsletter-form" class="flex flex-col gap-4">
+                        <input id="newsletter-email" type="email" placeholder="Your email address" class="w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <input id="newsletter-phone" type="tel" placeholder="Your phone number" class="w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <div class="flex items-center gap-4">
+                            <label class="flex items-center gap-2 text-sm text-gray-300">
+                                <input type="checkbox" id="newsletter-email-optin" class="rounded text-primary focus:ring-primary">
+                                Email updates
+                            </label>
+                            <label class="flex items-center gap-2 text-sm text-gray-300">
+                                <input type="checkbox" id="newsletter-sms-optin" class="rounded text-primary focus:ring-primary">
+                                SMS updates
+                            </label>
+                        </div>
+                        <button type="submit" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition w-full">Subscribe</button>
+                        <p id="newsletter-message" class="text-center text-sm mt-2 h-4"></p>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 mt-12 border-t border-gray-700 pt-8">
+                <p>&copy; 2024 Maganlal Bhakhri Shak Wala, Gayatri Restaurant. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/json" id="events-data">
+    [
+        {
+          "id": "fc012500-0421-40e6-a4ca-45bdbe00dc2d",
+          "title": "Live Garba Night at Gayatri Restaurant",
+          "short_description": "Join us for a vibrant evening of traditional Garba dance, live music, and delicious authentic food. An unforgettable cultural celebration in Mahesana!",
+          "full_description": "Get ready to twirl to the beats of traditional music! Maganlal Bhakhri Shak Wala, Gayatri Restaurant invites you to a spectacular Live Garba Night in Mahesana.\n\nImmerse yourself in the festive spirit with an electrifying live band playing all your favorite Garba and Dandiya tunes. Whether you're a seasoned dancer or a beginner, the energetic atmosphere is sure to get you on your feet.\n\nWhile you dance the night away, refuel with our special menu of authentic Gujarati delicacies. From our famous Bhakhri Shak to other savory treats, we'll have everything to delight your taste buds.\n\nBring your friends and family for an unforgettable night of culture, community, and celebration. We can't wait to see you there!",
+          "start_datetime": "2026-03-11T12:00:00+00:00",
+          "end_datetime": null,
+          "timezone": null,
+          "location_text": "mahesana",
+          "category": "Live Music",
+          "slug": null
+        },
+        {
+          "id": "4fdb86bf-1511-45f7-a9c4-7e819842272e",
+          "title": "Grand Opening: Our New Water Park Branch!",
+          "short_description": "We're thrilled to announce the grand opening of our newest Maganlal Bhakhri Shak Wala, Gayatri Restaurant branch at the water park! Join us for a day of celebration and authentic flavors.",
+          "full_description": "The moment you've been waiting for is here! Maganlal Bhakhri Shak Wala, Gayatri Restaurant is delighted to invite you to the grand opening of our brand new branch, conveniently located at the water park.\n\nCome and experience the same authentic and delicious Bhakhri Shak that you know and love, now in a vibrant new setting. Our team is excited to serve you our traditional recipes, prepared with the freshest ingredients and a lot of love.\n\nTo celebrate our opening day, we're offering special discounts on all orders throughout the day! Be among the first to dine with us at our new location.\n\nBring your friends and family for a memorable meal. We can't wait to welcome you and share this special milestone with our wonderful community.",
+          "start_datetime": "2026-03-24T05:00:00+00:00",
+          "end_datetime": null,
+          "timezone": null,
+          "location_text": "water park",
+          "category": "Grand Opening",
+          "slug": null
+        }
+    ]
+    </script>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Events Section Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const events = JSON.parse(document.getElementById('events-data').textContent);
+            const calendarTab = document.getElementById('calendar-tab');
+            const listTab = document.getElementById('list-tab');
+            const calendarView = document.getElementById('calendar-view');
+            const listView = document.getElementById('list-view');
+            const monthYearEl = document.getElementById('month-year');
+            const calendarGrid = document.getElementById('calendar-grid');
+            const prevMonthBtn = document.getElementById('prev-month');
+            const nextMonthBtn = document.getElementById('next-month');
+            const eventListContainer = document.getElementById('event-list-container');
+            
+            const eventModal = document.getElementById('event-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const modalBody = document.getElementById('modal-body');
+
+            let currentDate = new Date();
+
+            function switchTab(tab) {
+                if (tab === 'calendar') {
+                    calendarView.classList.remove('hidden');
+                    listView.classList.add('hidden');
+                    calendarTab.classList.add('border-primary', 'text-primary');
+                    listTab.classList.remove('border-primary', 'text-primary');
+                } else {
+                    calendarView.classList.add('hidden');
+                    listView.classList.remove('hidden');
+                    listTab.classList.add('border-primary', 'text-primary');
+                    calendarTab.classList.remove('border-primary', 'text-primary');
+                }
+            }
+
+            calendarTab.addEventListener('click', () => switchTab('calendar'));
+            listTab.addEventListener('click', () => switchTab('list'));
+
+            function renderCalendar() {
+                calendarGrid.innerHTML = '';
+                const month = currentDate.getMonth();
+                const year = currentDate.getFullYear();
+
+                monthYearEl.textContent = `${currentDate.toLocaleString('default', { month: 'long' })} ${year}`;
+
+                const firstDayOfMonth = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+                const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                dayNames.forEach(day => {
+                    const dayEl = document.createElement('div');
+                    dayEl.className = 'font-bold text-sm text-gray-500 pb-2';
+                    dayEl.textContent = day;
+                    calendarGrid.appendChild(dayEl);
+                });
+
+                for (let i = 0; i < firstDayOfMonth; i++) {
+                    calendarGrid.appendChild(document.createElement('div'));
+                }
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dayEl = document.createElement('div');
+                    dayEl.className = 'p-1 sm:p-2 h-16 sm:h-20 border border-gray-200 rounded-md flex flex-col items-center cursor-pointer hover:bg-gray-100';
+                    dayEl.textContent = day;
+                    
+                    const dayEvents = events.filter(event => {
+                        const eventDate = new Date(event.start_datetime);
+                        return eventDate.getFullYear() === year && eventDate.getMonth() === month && eventDate.getDate() === day;
+                    });
+
+                    if (dayEvents.length > 0) {
+                        const eventDot = document.createElement('div');
+                        eventDot.className = 'calendar-day-event';
+                        dayEl.appendChild(eventDot);
+                        dayEl.classList.add('font-bold', 'text-primary');
+                        dayEl.addEventListener('click', () => showEventModal(dayEvents[0]));
+                    }
+                    
+                    const today = new Date();
+                    if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                        dayEl.classList.add('bg-primary', 'text-white', 'rounded-full');
+                    }
+
+                    calendarGrid.appendChild(dayEl);
+                }
+            }
+
+            function renderEventList() {
+                eventListContainer.innerHTML = '';
+                if (events.length === 0) {
+                    eventListContainer.innerHTML = '<p class="text-center text-gray-500">No upcoming events.</p>';
+                    return;
+                }
+                events.forEach(event => {
+                    const eventDate = new Date(event.start_datetime);
+                    const card = document.createElement('div');
+                    card.className = 'bg-white p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow';
+                    card.innerHTML = `
+                        <p class="text-sm text-accent font-semibold">${eventDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                        <h4 class="text-2xl font-bold font-serif text-primary mt-1 mb-2">${event.title}</h4>
+                        <p class="text-gray-600">${event.short_description}</p>
+                    `;
+                    card.addEventListener('click', () => showEventModal(event));
+                    eventListContainer.appendChild(card);
+                });
+            }
+
+            function showEventModal(event) {
+                const eventDate = new Date(event.start_datetime);
+                modalBody.innerHTML = `
+                    <h3 class="text-3xl font-bold font-serif text-primary mb-4">${event.title}</h3>
+                    <div class="flex items-center text-gray-600 mb-4 space-x-4">
+                        <div class="flex items-center"><i data-lucide="calendar" class="w-5 h-5 mr-2 text-accent"></i> ${eventDate.toLocaleDateString('en-US', { dateStyle: 'full' })}</div>
+                        <div class="flex items-center"><i data-lucide="clock" class="w-5 h-5 mr-2 text-accent"></i> ${eventDate.toLocaleTimeString('en-US', { timeStyle: 'short' })}</div>
+                        ${event.location_text ? `<div class="flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-2 text-accent"></i> ${event.location_text}</div>` : ''}
+                    </div>
+                    <div class="prose max-w-none text-gray-700 whitespace-pre-wrap">${event.full_description}</div>
+                    ${event.ticket_url ? `<a href="${event.ticket_url}" target="_blank" class="inline-block bg-primary text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition mt-6">Register Now</a>` : ''}
+                `;
+                lucide.createIcons();
+                eventModal.classList.remove('hidden');
+                eventModal.classList.add('flex');
+            }
+
+            closeModalBtn.addEventListener('click', () => {
+                eventModal.classList.add('hidden');
+                eventModal.classList.remove('flex');
+            });
+            eventModal.addEventListener('click', (e) => {
+                if (e.target === eventModal) {
+                    eventModal.classList.add('hidden');
+                    eventModal.classList.remove('flex');
+                }
+            });
+
+            prevMonthBtn.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                renderCalendar();
+            });
+
+            nextMonthBtn.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                renderCalendar();
+            });
+
+            renderCalendar();
+            renderEventList();
+        });
+
+        // Newsletter form
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) { e.preventDefault(); var cfg = window.KORA_SITE_CONFIG || {}; var apiBaseUrl = (cfg.apiBaseUrl || '').replace(/\/+$/, ''); var businessId = cfg.businessId; var emailEl = document.getElementById('newsletter-email'); var phoneEl = document.getElementById('newsletter-phone'); var emailOpt = document.getElementById('newsletter-email-optin'); var smsOpt = document.getElementById('newsletter-sms-optin'); var msgEl = document.getElementById('newsletter-message'); var email = emailEl ? (emailEl.value || '').trim() : ''; var phone = phoneEl ? (phoneEl.value || '').trim() : ''; var emailOptIn = emailOpt ? emailOpt.checked : false; var smsOptIn = smsOpt ? smsOpt.checked : false; function showMsg(t, err) { if (msgEl) { msgEl.textContent = t || ''; msgEl.style.color = err ? '#f87171' : '#4ade80'; } } if (!email && !phone) { showMsg('Please enter email or phone.', true); return; } if (!emailOptIn && !smsOptIn) { showMsg('Please select at least one: Email or SMS updates.', true); return; } if (smsOptIn && !phone) { showMsg('Please enter your phone for SMS updates.', true); return; } if (emailOptIn && !email) { showMsg('Please enter your email for email updates.', true); return; } if (!apiBaseUrl || !businessId) { showMsg('Subscription is not configured.', true); return; } showMsg('Subscribing...', false); fetch(apiBaseUrl + '/api/v1/public/newsletter/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ business_id: businessId, email: email || null, phone_number: phone || null, email_opt_in: emailOptIn, sms_opt_in: smsOptIn, source: 'static_site_widget' }) }).then(function(r) { if (r.ok) return r.json(); throw new Error('Request failed'); }).then(function(data) { showMsg(data.message || 'Subscribed!', false); }).catch(function() { showMsg('Something went wrong. Please try again.', true); }); });
+    </script>
+</body>
+</html>

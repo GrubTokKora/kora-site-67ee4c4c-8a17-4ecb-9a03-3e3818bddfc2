@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Maganlal Bhakhri Shak Wala, Gayatri Restaurant</title>
+    <meta name="description" content="Get in touch with Maganlal Bhakhri Shak Wala, Gayatri Restaurant. Find our address, send us a message, or view our location on the map.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact Us - Maganlal Bhakhri Shak Wala, Gayatri Restaurant">
+    <meta property="og:description" content="Get in touch with Maganlal Bhakhri Shak Wala, Gayatri Restaurant. Find our address, send us a message, or view our location on the map.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1773637605_vssmr8.jpeg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-primary { background-color: #3129a8; }
+        .text-primary { color: #3129a8; }
+        .border-primary { border-color: #3129a8; }
+        .bg-secondary { background-color: #3c3b3f; }
+        .text-secondary { color: #3c3b3f; }
+        .bg-accent { background-color: #7e5798; }
+        .text-accent { color: #7e5798; }
+    </style>
+    <script>
+        window.KORA_SITE_CONFIG = {
+            apiBaseUrl: "http://localhost:8000",
+            businessId: "67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2",
+            recaptchaSiteKey: "6LfRt44sAAAAACVTvFvGjoufmEcZqZk_pT4T_5Xd"
+        };
+    </script>
+</head>
+<body class="bg-gray-50 text-secondary">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary font-serif">Maganlal Bhakhri Shak Wala</a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-gray-700 hover:text-primary transition">Home</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-primary transition">About</a>
+                <a href="index.html#events" class="text-gray-700 hover:text-primary transition">Events</a>
+                <a href="index.html#gallery" class="text-gray-700 hover:text-primary transition">Gallery</a>
+                <a href="contact.html" class="text-gray-700 hover:text-primary transition">Contact</a>
+            </nav>
+            <a href="index.html#menu" class="hidden md:inline-block bg-primary text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition">Explore Our Menu</a>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="index.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Home</a>
+            <a href="index.html#about" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">About</a>
+            <a href="index.html#events" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Events</a>
+            <a href="index.html#gallery" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Gallery</a>
+            <a href="contact.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Contact</a>
+            <a href="index.html#menu" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Explore Our Menu</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contact Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl md:text-5xl font-bold font-serif text-secondary">Get In Touch</h1>
+                    <p class="text-lg text-gray-600 mt-4">We'd love to hear from you. Send us a message or visit us at our location.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-3xl font-bold font-serif text-primary mb-6">Send a Message</h2>
+                        <form id="contact-form" novalidate>
+                            <div class="mb-4">
+                                <label for="fullName" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <div class="g-recaptcha" data-sitekey="6LfRt44sAAAAACVTvFvGjoufmEcZqZk_pT4T_5Xd"></div>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition">Send Message</button>
+                            </div>
+                            <p id="contact-form-message" class="text-center mt-4 h-5"></p>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info & Map -->
+                    <div class="space-y-8">
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold font-serif text-primary mb-4">Our Location</h3>
+                            <p class="text-gray-600 mb-4">1/2, sarvoday complex, Ahmedabad - Palanpur Hwy, Manglaytan Society, Mehsana, Gujarat 384002, India</p>
+                            <p class="text-gray-600"><strong>Email:</strong> info@maganlalbhakhrishakwala.com</p>
+                        </div>
+                        <div class="rounded-lg shadow-lg overflow-hidden h-96">
+                            <iframe
+                                src="https://maps.google.com/maps?q=23.5865,72.3893&z=16&output=embed"
+                                width="100%"
+                                height="100%"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold font-serif mb-4">Maganlal Bhakhri Shak Wala</h3>
+                    <p class="text-gray-300">1/2, sarvoday complex, Ahmedabad - Palanpur Hwy, Manglaytan Society, Mehsana, Gujarat 384002, India</p>
+                    <p class="text-gray-300 mt-2">Email: info@maganlalbhakhrishakwala.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold font-serif mb-4">Opening Hours</h3>
+                    <p class="text-gray-300">Tuesday - Sunday: 11:00 AM - 10:00 PM</p>
+                    <p class="text-gray-300">Monday: Closed</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold font-serif mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/maganlalbhakhrishakwala" target="_blank" class="text-gray-300 hover:text-white"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 mt-12 border-t border-gray-700 pt-8">
+                <p>&copy; 2024 Maganlal Bhakhri Shak Wala, Gayatri Restaurant. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const messageEl = document.getElementById('contact-form-message');
+            const fullName = form.elements.fullName.value.trim();
+            const email = form.elements.email.value.trim();
+            const message = form.elements.message.value.trim();
+            const captchaToken = grecaptcha.getResponse();
+
+            function showMessage(msg, isError = false) {
+                messageEl.textContent = msg;
+                messageEl.style.color = isError ? '#f87171' : '#4ade80';
+            }
+
+            // Validation
+            if (!fullName) {
+                showMessage('Please enter your full name.', true);
+                return;
+            }
+            if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+                showMessage('Please enter a valid email address.', true);
+                return;
+            }
+            if (!message) {
+                showMessage('Please enter your message.', true);
+                return;
+            }
+            if (!captchaToken) {
+                showMessage('Please complete the reCAPTCHA.', true);
+                return;
+            }
+
+            const cfg = window.KORA_SITE_CONFIG || {};
+            const apiBaseUrl = (cfg.apiBaseUrl || '').replace(/\/+$/, '');
+            const businessId = cfg.businessId;
+
+            if (!apiBaseUrl || !businessId) {
+                showMessage('Form is not configured correctly. Please contact us directly.', true);
+                return;
+            }
+
+            showMessage('Sending message...', false);
+            form.querySelector('button[type="submit"]').disabled = true;
+
+            fetch(apiBaseUrl + '/api/v1/public/forms/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    business_id: businessId,
+                    form_type: 'contact',
+                    form_data: {
+                        fullName: fullName,
+                        email: email,
+                        message: message
+                    },
+                    submitter_email: email,
+                    captcha_token: captchaToken
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Network response was not ok.');
+            })
+            .then(data => {
+                showMessage('Thank you! Your message has been sent.', false);
+                form.reset();
+                grecaptcha.reset();
+            })
+            .catch(error => {
+                showMessage('An error occurred. Please try again later.', true);
+            })
+            .finally(() => {
+                form.querySelector('button[type="submit"]').disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
