@@ -134,6 +134,7 @@
     state.micStream = null;
     try { if (state.audioCtx) state.audioCtx.close(); } catch (e) {}
     state.audioCtx = null;
+    state.nextPlayTime = 0;
   }
 
   async function startMic(state, inputRate) {
@@ -181,7 +182,17 @@
     var src = ctx.createBufferSource();
     src.buffer = buf;
     src.connect(ctx.destination);
-    src.start();
+    // Schedule sequentially to prevent overlapping chunks (which sounds like double speech).
+    var now = ctx.currentTime || 0;
+    var startAt = Math.max(now, state.nextPlayTime || 0);
+    try {
+      src.start(startAt);
+    } catch (e) {
+      // Fallback to immediate start if scheduling fails.
+      try { src.start(); } catch (e2) {}
+      startAt = now;
+    }
+    state.nextPlayTime = startAt + buf.duration;
   }
 
   function handleEvent(state, event) {
@@ -302,6 +313,7 @@
       greeted: false,
       assistantDraft: "",
       outputRate: 24000,
+      nextPlayTime: 0,
       bodyEl: body,
       streamingEl: streaming,
       statusEl: footer.querySelector(".kora-voice-status"),
