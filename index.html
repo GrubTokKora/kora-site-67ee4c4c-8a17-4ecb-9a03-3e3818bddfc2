@@ -88,7 +88,29 @@
             businessId: "67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2",
             recaptchaSiteKey: "6LfRt44sAAAAACVTvFvGjoufmEcZqZk_pT4T_5Xd"
         };
+        window.KORA_CONFIG = {
+            apiBaseUrl: "https://kora-agent.quseappdev.com",
+            businessId: "67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2",
+            features: {
+                voice: {
+                    enabled: true,
+                    useWebSearch: true,
+                    idleTimeoutSeconds: 10
+                }
+            }
+        };
     </script>
+    <link rel="stylesheet" href="assets/kora-voice/voice-widget.css" />
+    <script src="assets/kora-voice/voice-client.js"></script>
+    <script src="assets/kora-voice/voice-widget.js"></script>
+<script>
+window.KORA_CONFIG = window.KORA_CONFIG || {};
+window.KORA_CONFIG.apiBaseUrl = "http://localhost:8000";
+window.KORA_CONFIG.features = window.KORA_CONFIG.features || {};
+window.KORA_CONFIG.features.voice = window.KORA_CONFIG.features.voice || {};
+window.KORA_CONFIG.features.voice.enabled = true;
+window.KORA_CONFIG.features.voice.provider = "xai";
+</script>
 </head>
 <body class="bg-gray-50 text-secondary">
 
