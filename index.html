@@ -12,11 +12,13 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1773916980_wz4kdv.jpeg">
 
+    <!-- Canonical -->
+    <link rel="canonical" href="https://example.com/">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <style>
@@ -102,8 +104,6 @@
         };
     </script>
     <link rel="stylesheet" href="assets/kora-voice/voice-widget.css" />
-    <script src="assets/kora-voice/voice-client.js"></script>
-    <script src="assets/kora-voice/voice-widget.js"></script>
 <script>
 window.KORA_CONFIG = window.KORA_CONFIG || {};
 window.KORA_CONFIG.apiBaseUrl = "https://lyolytic-pseudochylous-jestine.ngrok-free.dev";
@@ -173,7 +173,7 @@ window.KORA_CONFIG.features.voice.provider = "xai";
                 <h2 class="text-4xl font-bold font-serif text-center mb-12 text-secondary">Special Offers</h2>
                 <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden md:flex">
                     <div class="md:w-1/2">
-                        <img class="h-64 w-full object-cover md:h-full" src="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1772016358_r7iwd9.jpeg" alt="Birthday Special Offer">
+                        <img class="h-64 w-full object-cover md:h-full" src="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1772016358_r7iwd9.jpeg" alt="Birthday Special Offer" loading="lazy">
                     </div>
                     <div class="p-8 md:w-1/2 flex flex-col justify-center">
                         <h3 class="text-2xl font-bold font-serif text-primary mb-2">Birthday Special</h3>
@@ -236,13 +236,13 @@ window.KORA_CONFIG.features.voice.provider = "xai";
                 <h2 class="text-4xl font-bold font-serif text-center mb-12 text-secondary">Our Gallery</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://deveusblob.blob.core.windows.net/kora-business-images/generated/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/instagram_1771612214_f9031f67_0.jpeg" alt="Gallery image 1" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-300">
+                        <img src="https://deveusblob.blob.core.windows.net/kora-business-images/generated/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/instagram_1771612214_f9031f67_0.jpeg" alt="Gallery image 1" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-300" loading="lazy">
                     </div>
                     <div class="overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1772016358_r7iwd9.jpeg" alt="Gallery image 2" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-300">
+                        <img src="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1772016358_r7iwd9.jpeg" alt="Gallery image 2" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-300" loading="lazy">
                     </div>
                     <div class="overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1773637605_vssmr8.jpeg" alt="Gallery image 3" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-300">
+                        <img src="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/10ba98a4-a410-4015-99d9-701074e2e5bc/1773637605_vssmr8.jpeg" alt="Gallery image 3" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-300" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -374,6 +374,9 @@ window.KORA_CONFIG.features.voice.provider = "xai";
         </div>
     </footer>
 
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="assets/kora-voice/voice-client.js" defer></script>
+    <script src="assets/kora-voice/voice-widget.js" defer></script>
     <script type="application/json" id="events-data">
     [
         {
@@ -643,5 +646,7 @@ window.KORA_CONFIG.features.voice.provider = "xai";
         // Newsletter form
         document.getElementById('newsletter-form').addEventListener('submit', function(e) { e.preventDefault(); var cfg = window.KORA_SITE_CONFIG || {}; var apiBaseUrl = (cfg.apiBaseUrl || '').replace(/\/+$/, ''); var businessId = cfg.businessId; var emailEl = document.getElementById('newsletter-email'); var phoneEl = document.getElementById('newsletter-phone'); var emailOpt = document.getElementById('newsletter-email-optin'); var smsOpt = document.getElementById('newsletter-sms-optin'); var msgEl = document.getElementById('newsletter-message'); var email = emailEl ? (emailEl.value || '').trim() : ''; var phone = phoneEl ? (phoneEl.value || '').trim() : ''; var emailOptIn = emailOpt ? emailOpt.checked : false; var smsOptIn = smsOpt ? smsOpt.checked : false; function showMsg(t, err) { if (msgEl) { msgEl.textContent = t || ''; msgEl.style.color = err ? '#f87171' : '#4ade80'; } } if (!email && !phone) { showMsg('Please enter email or phone.', true); return; } if (!emailOptIn && !smsOptIn) { showMsg('Please select at least one: Email or SMS updates.', true); return; } if (smsOptIn && !phone) { showMsg('Please enter your phone for SMS updates.', true); return; } if (emailOptIn && !email) { showMsg('Please enter your email for email updates.', true); return; } if (!apiBaseUrl || !businessId) { showMsg('Subscription is not configured.', true); return; } showMsg('Subscribing...', false); fetch(apiBaseUrl + '/api/v1/public/newsletter/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ business_id: businessId, email: email || null, phone_number: phone || null, email_opt_in: emailOptIn, sms_opt_in: smsOptIn, source: 'static_site_widget' }) }).then(function(r) { if (r.ok) return r.json(); throw new Error('Request failed'); }).then(function(data) { showMsg(data.message || 'Subscribed!', false); }).catch(function() { showMsg('Something went wrong. Please try again.', true); }); });
     </script>
+<script src="assets/kora-voice/voice-client.js"></script>
+<script src="assets/kora-voice/voice-widget.js"></script>
 </body>
 </html>
