@@ -20,6 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="assets/kora-voice/voice-widget.css" />
 
     <style>
         body {
@@ -40,8 +41,12 @@
         window.KORA_SITE_CONFIG = {
             apiBaseUrl: "https://lyolytic-pseudochylous-jestine.ngrok-free.dev",
             businessId: "67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2",
-            recaptchaSiteKey: "6LfRt44sAAAAACVTvFvGjoufmEcZqZk_pT4T_5Xd"
-        };
+            recaptchaSiteKey: "6LfRt44sAAAAACVTvFvGjoufmEcZqZk_pT4T_5Xd",
+            features: {
+                voice: {
+                    enabled: true
+                }
+            }
         };
     </script>
 </head>
@@ -162,6 +167,8 @@
     </footer>
 
     <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="assets/kora-voice/voice-client.js" defer></script>
+    <script src="assets/kora-voice/voice-widget.js" defer></script>
     <script>
         lucide.createIcons();
 
