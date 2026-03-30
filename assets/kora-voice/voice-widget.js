@@ -1,9 +1,35 @@
 /* Static-site voice widget (minimal UI + xAI realtime event loop). */
 (function () {
   var INACTIVITY_TIMEOUT_MS = 15000;
+  var VISITOR_VOICE_UNAVAILABLE =
+    "Voice assistant isn't available right now. Please try again later.";
+
   function friendlyError(raw) {
     var text = (raw || "").toString();
     var lower = text.toLowerCase();
+    if (
+      lower.indexOf("microphone permission") !== -1 ||
+      lower.indexOf("notallowederror") !== -1 ||
+      (lower.indexOf("permission") !== -1 && lower.indexOf("denied") !== -1)
+    ) {
+      return "Microphone permission is required to use the voice assistant.";
+    }
+    if (
+      lower.indexOf("failed to create voice session") !== -1 ||
+      lower.indexOf("monthly voice") !== -1 ||
+      lower.indexOf("quota") !== -1 ||
+      lower.indexOf("\"detail\"") !== -1 ||
+      lower.indexOf(" 429") !== -1 ||
+      lower.indexOf("429 ") !== -1 ||
+      lower.indexOf("status 429") !== -1 ||
+      lower.indexOf(" 401") !== -1 ||
+      lower.indexOf(" 403") !== -1 ||
+      lower.indexOf(" 500") !== -1 ||
+      lower.indexOf(" 502") !== -1 ||
+      lower.indexOf(" 503") !== -1
+    ) {
+      return VISITOR_VOICE_UNAVAILABLE;
+    }
     if (
       lower.indexOf("statuscode.unavailable") !== -1 ||
       lower.indexOf("grpc_status:14") !== -1 ||
@@ -15,7 +41,10 @@
     if (lower.indexOf("network") !== -1 || lower.indexOf("connection") !== -1) {
       return "We could not connect right now. Please check your internet and try again.";
     }
-    return text.trim() ? text : "Voice assistant is currently unavailable. Please try again.";
+    if (text.indexOf("{") !== -1 && (lower.indexOf("detail") !== -1 || lower.indexOf("\"error\"") !== -1)) {
+      return VISITOR_VOICE_UNAVAILABLE;
+    }
+    return text.trim() ? text : VISITOR_VOICE_UNAVAILABLE;
   }
 
   function el(tag, attrs, children) {
@@ -138,6 +167,7 @@
         page_context: { url: window.location.href, title: document.title },
       });
       state.bootstrap = bootstrap;
+      state.koraSessionId = (bootstrap && bootstrap.kora_session_id) || "";
 
       var wsUrl = bootstrap.websocket_url;
       var secret = bootstrap.client_secret;
@@ -184,6 +214,14 @@
     if (state.inactivityTimer) {
       clearTimeout(state.inactivityTimer);
       state.inactivityTimer = null;
+    }
+    var koraSessionId = state.koraSessionId;
+    state.koraSessionId = "";
+    if (koraSessionId && window.KoraVoiceClient && window.KoraVoiceClient.closeVoiceSession) {
+      window.KoraVoiceClient.closeVoiceSession({
+        business_id: state.businessId,
+        kora_session_id: koraSessionId,
+      }).catch(function () {});
     }
     try { if (state.ws) state.ws.close(); } catch (e) {}
     state.ws = null;
@@ -406,6 +444,7 @@
       micStream: null,
       proc: null,
       bootstrap: null,
+      koraSessionId: "",
       sessionReady: false,
       greeted: false,
       assistantDraft: "",
@@ -471,6 +510,16 @@
 
     footer.querySelector("button.primary").addEventListener("click", function () {
       close();
+    });
+
+    window.addEventListener("beforeunload", function () {
+      if (!state.koraSessionId || !window.KoraVoiceClient || !window.KoraVoiceClient.closeVoiceSession) return;
+      try {
+        window.KoraVoiceClient.closeVoiceSession({
+          business_id: state.businessId,
+          kora_session_id: state.koraSessionId,
+        });
+      } catch (e) {}
     });
   }
 
