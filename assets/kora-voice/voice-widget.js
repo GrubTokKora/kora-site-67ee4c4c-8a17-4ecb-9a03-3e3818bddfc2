@@ -134,18 +134,12 @@
     };
   }
 
-  function addAgentMessage(state, text) {
-    var t = (text || "").trim();
-    if (!t) return;
-    appendBubble(state.bodyEl, "agent", t);
-  }
-
   function submitCollectedInquiry(state) {
     if (!window.KoraVoiceClient || !window.KoraVoiceClient.submitVoiceInquiry) return Promise.resolve();
     var s = state.inquiry || {};
     if (s.submitting || s.submitted) return Promise.resolve();
     if (!state.koraSessionId) {
-      addAgentMessage(state, "I couldn't submit right now because the session id is missing. Please try again.");
+      appendBubble(state.bodyEl, "agent", "I couldn't submit right now because the session id is missing. Please try again.");
       return Promise.resolve();
     }
     s.submitting = true;
@@ -164,9 +158,9 @@
     }).then(function () {
       s.submitted = true;
       s.active = false;
-      addAgentMessage(state, "Thank you. I've submitted your inquiry and our team will get back to you soon.");
+      appendBubble(state.bodyEl, "agent", "Thank you. I've submitted your inquiry and our team will get back to you soon.");
     }).catch(function () {
-      addAgentMessage(state, "I couldn't submit your inquiry right now. Please try again later.");
+      appendBubble(state.bodyEl, "agent", "I couldn't submit your inquiry right now. Please try again later.");
     }).finally(function () {
       s.submitting = false;
     });
@@ -179,44 +173,23 @@
     if (!text) return;
 
     if (s.step === "name") {
-      if (text.length < 2 || /\d/.test(text)) {
-        addAgentMessage(state, "Please share your full name so we can follow up.");
-        return;
-      }
       s.name = text;
       s.step = "contact";
-      addAgentMessage(state, "Thanks. Please share your email or phone number.");
       return;
     }
 
     if (s.step === "contact") {
       var email = extractEmail(text);
       var phone = extractPhone(text);
-      if (!email && !phone) {
-        addAgentMessage(state, "I could not detect contact details. Please provide a valid email or phone number.");
-        return;
-      }
       s.email = email || s.email;
       s.phone = phone || s.phone;
       s.step = "inquiry";
-      addAgentMessage(state, "Got it. Please tell me your question or inquiry in one message.");
       return;
     }
 
     if (s.step === "inquiry") {
-      if (text.length < 8) {
-        addAgentMessage(state, "Please share a bit more detail so our team can help effectively.");
-        return;
-      }
       s.inquiry = text;
       s.step = "confirm";
-      addAgentMessage(
-        state,
-        "I captured this:\nName: " + s.name +
-        "\nContact: " + (s.email || s.phone) +
-        "\nInquiry: " + s.inquiry +
-        "\n\nShould I submit this to our team?"
-      );
       return;
     }
 
@@ -227,10 +200,8 @@
       }
       if (looksLikeNo(text)) {
         s.active = false;
-        addAgentMessage(state, "No problem. I have not submitted anything.");
         return;
       }
-      addAgentMessage(state, "Please say yes to submit or no to cancel.");
     }
   }
 
@@ -512,10 +483,22 @@
         if (!state.inquiry.active && !state.inquiry.submitted && isFallbackAnswer(agentText)) {
           state.inquiry.active = true;
           state.inquiry.step = "name";
-          addAgentMessage(
-            state,
-            "I can still help by taking your inquiry for our team. Let's do it step by step. What is your full name?"
-          );
+          return;
+        }
+        if (state.inquiry.active && agentText.indexOf("What is the best email or phone number to reach you?") !== -1) {
+          state.inquiry.step = "contact";
+          return;
+        }
+        if (state.inquiry.active && agentText.indexOf("Please tell me your question or inquiry.") !== -1) {
+          state.inquiry.step = "inquiry";
+          return;
+        }
+        if (state.inquiry.active && agentText.indexOf("I have everything I need. Would you like me to submit this to our team?") !== -1) {
+          state.inquiry.step = "confirm";
+          return;
+        }
+        if (state.inquiry.active && agentText.indexOf("Thanks, I'm submitting your inquiry now.") !== -1) {
+          submitCollectedInquiry(state);
         }
       }
       state.assistantDraft = "";
