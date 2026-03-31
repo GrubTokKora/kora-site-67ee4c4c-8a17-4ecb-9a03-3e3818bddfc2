@@ -98,6 +98,142 @@
     container.scrollTop = container.scrollHeight;
   }
 
+  function extractEmail(text) {
+    var m = (text || "").match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
+    return m ? m[0].trim() : "";
+  }
+
+  function extractPhone(text) {
+    var m = (text || "").match(/(?:\+?\d[\d\s\-().]{6,}\d)/);
+    return m ? m[0].replace(/\s+/g, " ").trim() : "";
+  }
+
+  function isFallbackAnswer(text) {
+    var t = (text || "").toLowerCase();
+    return t.indexOf("i don't have that information on hand right now") !== -1;
+  }
+
+  function looksLikeYes(text) {
+    return /\b(yes|yeah|yep|correct|confirm|sure|submit|go ahead)\b/i.test(text || "");
+  }
+
+  function looksLikeNo(text) {
+    return /\b(no|nope|cancel|stop|don't submit|do not submit)\b/i.test(text || "");
+  }
+
+  function resetInquiryState(state) {
+    state.inquiry = {
+      active: false,
+      submitting: false,
+      submitted: false,
+      step: "name",
+      name: "",
+      email: "",
+      phone: "",
+      inquiry: "",
+    };
+  }
+
+  function addAgentMessage(state, text) {
+    var t = (text || "").trim();
+    if (!t) return;
+    appendBubble(state.bodyEl, "agent", t);
+  }
+
+  function submitCollectedInquiry(state) {
+    if (!window.KoraVoiceClient || !window.KoraVoiceClient.submitVoiceInquiry) return Promise.resolve();
+    var s = state.inquiry || {};
+    if (s.submitting || s.submitted) return Promise.resolve();
+    if (!state.koraSessionId) {
+      addAgentMessage(state, "I couldn't submit right now because the session id is missing. Please try again.");
+      return Promise.resolve();
+    }
+    s.submitting = true;
+    return window.KoraVoiceClient.submitVoiceInquiry({
+      business_id: state.businessId,
+      kora_session_id: state.koraSessionId,
+      form_type: "voice_inquiry",
+      submitter_email: s.email || null,
+      form_data: {
+        name: s.name,
+        email: s.email || null,
+        phone: s.phone || null,
+        inquiry: s.inquiry,
+        source: "voice_widget",
+      },
+    }).then(function () {
+      s.submitted = true;
+      s.active = false;
+      addAgentMessage(state, "Thank you. I've submitted your inquiry and our team will get back to you soon.");
+    }).catch(function () {
+      addAgentMessage(state, "I couldn't submit your inquiry right now. Please try again later.");
+    }).finally(function () {
+      s.submitting = false;
+    });
+  }
+
+  function handleInquiryCapture(state, userText) {
+    var s = state.inquiry || {};
+    if (!s.active) return;
+    var text = (userText || "").trim();
+    if (!text) return;
+
+    if (s.step === "name") {
+      if (text.length < 2 || /\d/.test(text)) {
+        addAgentMessage(state, "Please share your full name so we can follow up.");
+        return;
+      }
+      s.name = text;
+      s.step = "contact";
+      addAgentMessage(state, "Thanks. Please share your email or phone number.");
+      return;
+    }
+
+    if (s.step === "contact") {
+      var email = extractEmail(text);
+      var phone = extractPhone(text);
+      if (!email && !phone) {
+        addAgentMessage(state, "I could not detect contact details. Please provide a valid email or phone number.");
+        return;
+      }
+      s.email = email || s.email;
+      s.phone = phone || s.phone;
+      s.step = "inquiry";
+      addAgentMessage(state, "Got it. Please tell me your question or inquiry in one message.");
+      return;
+    }
+
+    if (s.step === "inquiry") {
+      if (text.length < 8) {
+        addAgentMessage(state, "Please share a bit more detail so our team can help effectively.");
+        return;
+      }
+      s.inquiry = text;
+      s.step = "confirm";
+      addAgentMessage(
+        state,
+        "I captured this:\nName: " + s.name +
+        "\nContact: " + (s.email || s.phone) +
+        "\nInquiry: " + s.inquiry +
+        "\n\nShould I submit this to our team?"
+      );
+      return;
+    }
+
+    if (s.step === "confirm") {
+      if (looksLikeYes(text)) {
+        submitCollectedInquiry(state);
+        return;
+      }
+      if (looksLikeNo(text)) {
+        s.active = false;
+        addAgentMessage(state, "No problem. I have not submitted anything.");
+        return;
+      }
+      addAgentMessage(state, "Please say yes to submit or no to cancel.");
+    }
+  }
+
   function setStatus(state, kind, text) {
     state.statusKind = kind || "idle";
     state.statusText = text || "Idle";
@@ -226,6 +362,7 @@
     try { if (state.ws) state.ws.close(); } catch (e) {}
     state.ws = null;
     state.sessionReady = false;
+    resetInquiryState(state);
     setStatus(state, "idle", "Idle");
     setIntro(state, "idle");
     stopMic(state);
@@ -354,7 +491,9 @@
 
     if (event.type === "conversation.item.input_audio_transcription.completed") {
       setStatus(state, "thinking", "Thinking");
-      appendBubble(state.bodyEl, "user", event.transcript || "");
+      var userText = event.transcript || "";
+      appendBubble(state.bodyEl, "user", userText);
+      handleInquiryCapture(state, userText);
       return;
     }
 
@@ -368,7 +507,16 @@
 
     if (event.type === "response.output_audio_transcript.done" || event.type === "response.done" || event.type === "response.output_audio.done") {
       if (state.assistantDraft && state.assistantDraft.trim()) {
-        appendBubble(state.bodyEl, "agent", state.assistantDraft.trim());
+        var agentText = state.assistantDraft.trim();
+        appendBubble(state.bodyEl, "agent", agentText);
+        if (!state.inquiry.active && !state.inquiry.submitted && isFallbackAnswer(agentText)) {
+          state.inquiry.active = true;
+          state.inquiry.step = "name";
+          addAgentMessage(
+            state,
+            "I can still help by taking your inquiry for our team. Let's do it step by step. What is your full name?"
+          );
+        }
       }
       state.assistantDraft = "";
       state.streamingEl.textContent = "";
@@ -465,6 +613,7 @@
       statusTextEl: statusText,
       errorEl: errorEl,
     };
+    resetInquiryState(state);
 
     function showError(text) {
       if (!text) {
