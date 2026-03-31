@@ -109,6 +109,8 @@ window.KORA_CONFIG.features.voice = window.KORA_CONFIG.features.voice || {};
 window.KORA_CONFIG.features.voice.enabled = true;
 window.KORA_CONFIG.features.voice.provider = "xai";
 </script>
+
+
 </head>
 <body class="bg-gray-50 text-secondary">
 
@@ -746,6 +748,7 @@ window.KORA_CONFIG.features.voice.provider = "xai";
         // Newsletter form
         document.getElementById('newsletter-form').addEventListener('submit', function(e) { e.preventDefault(); var cfg = window.KORA_CONFIG || {}; var apiBaseUrl = (cfg.apiBaseUrl || '').replace(/\/+$/, ''); var businessId = cfg.businessId; var emailEl = document.getElementById('newsletter-email'); var phoneEl = document.getElementById('newsletter-phone'); var emailOpt = document.getElementById('newsletter-email-optin'); var smsOpt = document.getElementById('newsletter-sms-optin'); var msgEl = document.getElementById('newsletter-message'); var email = emailEl ? (emailEl.value || '').trim() : ''; var phone = phoneEl ? (phoneEl.value || '').trim() : ''; var emailOptIn = emailOpt ? emailOpt.checked : false; var smsOptIn = smsOpt ? smsOpt.checked : false; function showMsg(t, err) { if (msgEl) { msgEl.textContent = t || ''; msgEl.style.color = err ? '#f87171' : '#4ade80'; } } if (!email && !phone) { showMsg('Please enter email or phone.', true); return; } if (!emailOptIn && !smsOptIn) { showMsg('Please select at least one: Email or SMS updates.', true); return; } if (smsOptIn && !phone) { showMsg('Please enter your phone for SMS updates.', true); return; } if (emailOptIn && !email) { showMsg('Please enter your email for email updates.', true); return; } if (!apiBaseUrl || !businessId) { showMsg('Subscription is not configured.', true); return; } showMsg('Subscribing...', false); fetch(apiBaseUrl + '/api/v1/public/newsletter/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ business_id: businessId, email: email || null, phone_number: phone || null, email_opt_in: emailOptIn, sms_opt_in: smsOptIn, source: 'static_site_widget' }) }).then(function(r) { if (r.ok) return r.json(); throw new Error('Request failed'); }).then(function(data) { showMsg(data.message || 'Subscribed!', false); }).catch(function() { showMsg('Something went wrong. Please try again.', true); }); });
     </script>
+
 <script src="assets/kora-voice/voice-client.js"></script>
 <script src="assets/kora-voice/voice-widget.js"></script>
 </body>

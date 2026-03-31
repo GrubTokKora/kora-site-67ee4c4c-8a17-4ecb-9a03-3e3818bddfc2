@@ -113,10 +113,6 @@
     return t.indexOf("i don't have that information on hand right now") !== -1;
   }
 
-  function isSubmissionPhrase(text) {
-    return /thanks[,.' ]+i[' ]?m submitting your inquiry now\.?/i.test(text || "");
-  }
-
   function looksLikeYes(text) {
     return /\b(yes|yeah|yep|correct|confirm|sure|submit|go ahead)\b/i.test(text || "");
   }
@@ -128,22 +124,33 @@
   function resetInquiryState(state) {
     state.inquiry = {
       active: false,
-      submitting: false,
-      submitted: false,
       step: "name",
       name: "",
+      contact: "",
       email: "",
       phone: "",
       inquiry: "",
+      confirmed: false,
+      submitted: false,
     };
+  }
+
+  function maybeSubmitInquiry(state) {
+    var s = state.inquiry || {};
+    console.log("🧾 Inquiry State:", s);
+    if (!s.confirmed || s.submitted || !s.name || !s.contact || !s.inquiry) return;
+    s.submitted = true;
+    console.log("🚀 Submitting inquiry...");
+    submitCollectedInquiry(state);
   }
 
   function submitCollectedInquiry(state) {
     if (!window.KoraVoiceClient || !window.KoraVoiceClient.submitVoiceInquiry) return Promise.resolve();
     var s = state.inquiry || {};
-    if (s.submitting || s.submitted) return Promise.resolve();
+    if (s.submitting) return Promise.resolve();
     if (!state.koraSessionId) {
       appendBubble(state.bodyEl, "agent", "I couldn't submit right now because the session id is missing. Please try again.");
+      s.submitted = false;
       return Promise.resolve();
     }
     s.submitting = true;
@@ -164,6 +171,7 @@
       s.active = false;
       appendBubble(state.bodyEl, "agent", "Thank you. I've submitted your inquiry and our team will get back to you soon.");
     }).catch(function () {
+      s.submitted = false;
       appendBubble(state.bodyEl, "agent", "I couldn't submit your inquiry right now. Please try again later.");
     }).finally(function () {
       s.submitting = false;
@@ -187,6 +195,7 @@
       var phone = extractPhone(text);
       s.email = email || s.email;
       s.phone = phone || s.phone;
+      s.contact = s.email || s.phone || text;
       s.step = "inquiry";
       return;
     }
@@ -199,7 +208,8 @@
 
     if (s.step === "confirm") {
       if (looksLikeYes(text)) {
-        submitCollectedInquiry(state);
+        s.confirmed = true;
+        maybeSubmitInquiry(state);
         return;
       }
       if (looksLikeNo(text)) {
@@ -515,9 +525,6 @@
         if (state.inquiry.active && agentText.indexOf("I have everything I need. Would you like me to submit this to our team?") !== -1) {
           state.inquiry.step = "confirm";
           return;
-        }
-        if (state.inquiry.active && isSubmissionPhrase(agentText)) {
-          submitCollectedInquiry(state);
         }
       }
       state.assistantDraft = "";
