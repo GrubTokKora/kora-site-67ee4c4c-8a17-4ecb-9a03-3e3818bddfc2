@@ -98,6 +98,32 @@
     container.scrollTop = container.scrollHeight;
   }
 
+  function normalizeText(text) {
+    return (text || "").toString().trim().replace(/\s+/g, " ");
+  }
+
+  function appendUserBubbleOnce(state, text, itemId) {
+    var t = normalizeText(text);
+    if (!t) return false;
+    if (itemId && state.lastUserItemId === itemId) return false;
+    if (!itemId && state.lastUserText === t) return false;
+    if (itemId) state.lastUserItemId = itemId;
+    state.lastUserText = t;
+    appendBubble(state.bodyEl, "user", t);
+    return true;
+  }
+
+  function commitAssistantMessageOnce(state, text, turnKey) {
+    var t = normalizeText(text);
+    if (!t) return false;
+    if (turnKey && state.lastAssistantTurnKey === turnKey) return false;
+    if (!turnKey && state.lastAssistantText === t) return false;
+    if (turnKey) state.lastAssistantTurnKey = turnKey;
+    state.lastAssistantText = t;
+    appendBubble(state.bodyEl, "agent", t);
+    return true;
+  }
+
   function extractEmail(text) {
     var m = (text || "").match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
     return m ? m[0].trim() : "";
@@ -136,6 +162,10 @@
       phone: "",
       inquiry: "",
     };
+    state.lastUserItemId = "";
+    state.lastUserText = "";
+    state.lastAssistantTurnKey = "";
+    state.lastAssistantText = "";
   }
 
   function submitCollectedInquiry(state) {
@@ -467,8 +497,9 @@
     if (event.type === "conversation.item.input_audio_transcription.completed") {
       setStatus(state, "thinking", "Thinking");
       var userText = event.transcript || "";
-      appendBubble(state.bodyEl, "user", userText);
-      handleInquiryCapture(state, userText);
+      if (appendUserBubbleOnce(state, userText, event.item_id)) {
+        handleInquiryCapture(state, userText);
+      }
       return;
     }
 
@@ -480,8 +511,9 @@
         });
         if (audioPart && audioPart.transcript) {
           setStatus(state, "thinking", "Thinking");
-          appendBubble(state.bodyEl, "user", audioPart.transcript);
-          handleInquiryCapture(state, audioPart.transcript);
+          if (appendUserBubbleOnce(state, audioPart.transcript, item.id)) {
+            handleInquiryCapture(state, audioPart.transcript);
+          }
         }
       }
       return;
@@ -517,7 +549,17 @@
     if (event.type === "response.output_audio_transcript.done" || event.type === "response.done" || event.type === "response.output_audio.done") {
       if (state.assistantDraft && state.assistantDraft.trim()) {
         var agentText = state.assistantDraft.trim();
-        appendBubble(state.bodyEl, "agent", agentText);
+        var assistantTurnKey =
+          (typeof event.item_id === "string" && event.item_id) ||
+          (typeof event.response_id === "string" && event.response_id) ||
+          (event.type === "response.done" && event.response && event.response.id) ||
+          "";
+        if (!commitAssistantMessageOnce(state, agentText, assistantTurnKey)) {
+          state.assistantDraft = "";
+          state.streamingEl.textContent = "";
+          setStatus(state, "listening", "Listening");
+          return;
+        }
         if (!state.inquiry.active && !state.inquiry.submitted && isFallbackAnswer(agentText)) {
           state.inquiry.active = true;
           state.inquiry.step = "name";
