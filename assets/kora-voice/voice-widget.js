@@ -113,6 +113,10 @@
     return t.indexOf("i don't have that information on hand right now") !== -1;
   }
 
+  function isSubmissionPhrase(text) {
+    return /thanks[,.' ]+i[' ]?m submitting your inquiry now\.?/i.test(text || "");
+  }
+
   function looksLikeYes(text) {
     return /\b(yes|yeah|yep|correct|confirm|sure|submit|go ahead)\b/i.test(text || "");
   }
@@ -497,7 +501,7 @@
           state.inquiry.step = "confirm";
           return;
         }
-        if (state.inquiry.active && agentText.indexOf("Thanks, I'm submitting your inquiry now.") !== -1) {
+        if (state.inquiry.active && isSubmissionPhrase(agentText)) {
           submitCollectedInquiry(state);
         }
       }
