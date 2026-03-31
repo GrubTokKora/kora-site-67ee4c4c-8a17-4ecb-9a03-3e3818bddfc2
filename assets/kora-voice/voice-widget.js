@@ -472,6 +472,21 @@
       return;
     }
 
+    if (event.type === "conversation.item.added") {
+      var item = event.item;
+      if (item && item.role === "user" && Array.isArray(item.content)) {
+        var audioPart = item.content.find(function (c) {
+          return c && c.type === "input_audio" && typeof c.transcript === "string";
+        });
+        if (audioPart && audioPart.transcript) {
+          setStatus(state, "thinking", "Thinking");
+          appendBubble(state.bodyEl, "user", audioPart.transcript);
+          handleInquiryCapture(state, audioPart.transcript);
+        }
+      }
+      return;
+    }
+
     if (event.type === "response.output_audio_transcript.delta") {
       var piece = pickTranscriptDelta(event);
       if (!piece) return;
