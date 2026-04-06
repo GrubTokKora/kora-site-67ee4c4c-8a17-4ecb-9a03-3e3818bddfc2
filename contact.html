@@ -103,15 +103,26 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-primary font-serif">Mann Bhakhari Shak Wala</a>
             <nav class="hidden md:flex space-x-8 items-center">
-                <a href="index.html" class="text-gray-700 hover:text-primary transition">Home</a>
-                <a href="index.html#about" class="text-gray-700 hover:text-primary transition">About</a>
-                <a href="index.html#menu" class="text-gray-700 hover:text-primary transition">Menu</a>
-                <a href="index.html#events" class="text-gray-700 hover:text-primary transition">Events</a>
-                <a href="index.html#gallery" class="text-gray-700 hover:text-primary transition">Gallery</a>
-                <a href="contact.html" class="text-gray-700 hover:text-primary transition">Contact</a>
+                <a href="index.html" class="text-gray-700 hover:text-primary transition" data-i18n="nav_home">Home</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-primary transition" data-i18n="nav_about">About</a>
+                <a href="index.html#menu" class="text-gray-700 hover:text-primary transition" data-i18n="nav_menu">Menu</a>
+                <a href="index.html#events" class="text-gray-700 hover:text-primary transition" data-i18n="nav_events">Events</a>
+                <a href="index.html#gallery" class="text-gray-700 hover:text-primary transition" data-i18n="nav_gallery">Gallery</a>
+                <a href="contact.html" class="text-gray-700 hover:text-primary transition" data-i18n="nav_contact">Contact</a>
             </nav>
             <div class="hidden md:flex items-center gap-3">
-                <a href="index.html#menu" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition">Explore Our Menu</a>
+                <div class="relative">
+                    <button id="lang-toggle" class="flex items-center gap-2 text-gray-700 hover:text-primary transition px-3 py-2 rounded-md border border-gray-200">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                        <span id="current-lang">English</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div id="lang-dropdown" class="hidden absolute top-full right-0 mt-2 w-32 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50">
+                        <button onclick="setLanguage('en')" class="block w-full text-left px-4 py-2 hover:bg-gray-100 text-gray-700" data-i18n="lang_english">English</button>
+                        <button onclick="setLanguage('hi')" class="block w-full text-left px-4 py-2 hover:bg-gray-100 text-gray-700" data-i18n="lang_hindi">हिंदी</button>
+                    </div>
+                </div>
+                <a href="index.html#menu" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition" data-i18n="explore_menu">Explore Our Menu</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden">
                 <i data-lucide="menu"></i>
@@ -119,13 +130,20 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white">
-            <a href="index.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Home</a>
-            <a href="index.html#about" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">About</a>
-            <a href="index.html#menu" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Menu</a>
-            <a href="index.html#events" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Events</a>
-            <a href="index.html#gallery" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Gallery</a>
-            <a href="contact.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Contact</a>
-            <a href="index.html#menu" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Explore Our Menu</a>
+            <div class="px-6 py-3 border-b border-gray-100">
+                <p class="text-sm text-gray-500 mb-2" data-i18n="select_language">Select Language:</p>
+                <div class="flex gap-4">
+                    <button onclick="setLanguage('en')" class="text-primary font-medium" data-i18n="lang_english">English</button>
+                    <button onclick="setLanguage('hi')" class="text-gray-600" data-i18n="lang_hindi">हिंदी</button>
+                </div>
+            </div>
+            <a href="index.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100" data-i18n="nav_home">Home</a>
+            <a href="index.html#about" class="block px-6 py-3 text-gray-700 hover:bg-gray-100" data-i18n="nav_about">About</a>
+            <a href="index.html#menu" class="block px-6 py-3 text-gray-700 hover:bg-gray-100" data-i18n="nav_menu">Menu</a>
+            <a href="index.html#events" class="block px-6 py-3 text-gray-700 hover:bg-gray-100" data-i18n="nav_events">Events</a>
+            <a href="index.html#gallery" class="block px-6 py-3 text-gray-700 hover:bg-gray-100" data-i18n="nav_gallery">Gallery</a>
+            <a href="contact.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100" data-i18n="nav_contact">Contact</a>
+            <a href="index.html#menu" class="block px-6 py-3 text-gray-700 hover:bg-gray-100" data-i18n="explore_menu">Explore Our Menu</a>
         </div>
     </header>
 
@@ -134,32 +152,32 @@
         <section class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h1 class="text-4xl md:text-5xl font-bold font-serif text-secondary">Get In Touch</h1>
-                    <p class="text-lg text-gray-600 mt-4">We'd love to hear from you. Send us a message or visit us at our location.</p>
+                    <h1 class="text-4xl md:text-5xl font-bold font-serif text-secondary" data-i18n="get_in_touch">Get In Touch</h1>
+                    <p class="text-lg text-gray-600 mt-4" data-i18n="contact_subtitle">We'd love to hear from you. Send us a message or visit us at our location.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <!-- Contact Form -->
                     <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <h2 class="text-3xl font-bold font-serif text-primary mb-6">Send a Message</h2>
+                        <h2 class="text-3xl font-bold font-serif text-primary mb-6" data-i18n="send_message">Send a Message</h2>
                         <form id="contact-form" novalidate>
                             <div class="mb-4">
-                                <label for="fullName" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <label for="fullName" class="block text-gray-700 font-medium mb-2" data-i18n="full_name">Full Name</label>
                                 <input type="text" id="fullName" name="fullName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
                             </div>
                             <div class="mb-4">
-                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <label for="email" class="block text-gray-700 font-medium mb-2" data-i18n="email_address">Email Address</label>
                                 <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
                             </div>
                             <div class="mb-6">
-                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <label for="message" class="block text-gray-700 font-medium mb-2" data-i18n="message">Message</label>
                                 <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
                             </div>
                             <div class="mb-6">
                                 <div class="g-recaptcha" data-sitekey="6LfRt44sAAAAACVTvFvGjoufmEcZqZk_pT4T_5Xd"></div>
                             </div>
                             <div>
-                                <button type="submit" class="w-full bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition">Send Message</button>
+                                <button type="submit" class="w-full bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition" data-i18n="send_message_btn">Send Message</button>
                             </div>
                             <p id="contact-form-message" class="text-center mt-4 h-5"></p>
                         </form>
@@ -168,9 +186,9 @@
                     <!-- Contact Info & Map -->
                     <div class="space-y-8">
                         <div class="bg-white p-8 rounded-lg shadow-lg">
-                            <h3 class="text-2xl font-bold font-serif text-primary mb-4">Our Location</h3>
+                            <h3 class="text-2xl font-bold font-serif text-primary mb-4" data-i18n="our_location">Our Location</h3>
                             <p class="text-gray-600 mb-4">1/2, sarvoday complex, Ahmedabad - Palanpur Hwy, Manglaytan Society, Mehsana, Gujarat 384002, India</p>
-                            <p class="text-gray-600 mb-2"><strong>Phone:</strong> <a href="tel:+918490082336" class="hover:text-primary">+91 84900 82336</a> / <a href="tel:+916354907118" class="hover:text-primary">+91 63549 07118</a> / <a href="tel:+916354907117" class="hover:text-primary">+91 63549 07117</a></p>
+                            <p class="text-gray-600 mb-2"><strong data-i18n="phone">Phone:</strong> <a href="tel:+918490082336" class="hover:text-primary">+91 84900 82336</a> / <a href="tel:+916354907118" class="hover:text-primary">+91 63549 07118</a> / <a href="tel:+916354907117" class="hover:text-primary">+91 63549 07117</a></p>
                             <p class="text-gray-600"><strong>Email:</strong> <a href="mailto:info@mannbhakhrishakwala.com" class="hover:text-primary">info@mannbhakhrishakwala.com</a></p>
                         </div>
                         <div class="rounded-lg shadow-lg overflow-hidden h-96">
@@ -201,12 +219,12 @@
                     <p class="text-gray-300 mt-2">Email: <a href="mailto:info@mannbhakhrishakwala.com" class="hover:text-white">info@mannbhakhrishakwala.com</a></p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold font-serif mb-4">Opening Hours</h3>
-                    <p class="text-gray-300">Tuesday - Sunday: 11:00 AM - 10:00 PM</p>
-                    <p class="text-gray-300">Monday: Closed</p>
+                    <h3 class="text-xl font-bold font-serif mb-4" data-i18n="opening_hours">Opening Hours</h3>
+                    <p class="text-gray-300" data-i18n="hours_tue_sun">Tuesday - Sunday: 11:00 AM - 10:00 PM</p>
+                    <p class="text-gray-300" data-i18n="hours_mon">Monday: Closed</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold font-serif mb-4">Follow Us</h3>
+                    <h3 class="text-xl font-bold font-serif mb-4" data-i18n="follow_us">Follow Us</h3>
                     <div class="flex space-x-4 items-center">
                         <a href="https://www.instagram.com/mannbhakhrishakwala" target="_blank" class="text-gray-300 hover:text-white"><i data-lucide="instagram"></i></a>
                         <a href="mailto:info@mannbhakhrishakwala.com?subject=Inquiry" class="text-gray-300 hover:text-white" title="Chat with us">
@@ -259,6 +277,108 @@
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language Toggle
+        const langToggle = document.getElementById('lang-toggle');
+        const langDropdown = document.getElementById('lang-dropdown');
+        let langDropdownOpen = false;
+        
+        if (langToggle) {
+            langToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langDropdownOpen = !langDropdownOpen;
+                langDropdown.classList.toggle('hidden', !langDropdownOpen);
+            });
+            
+            document.addEventListener('click', () => {
+                if (langDropdownOpen) {
+                    langDropdownOpen = false;
+                    langDropdown.classList.add('hidden');
+                }
+            });
+        }
+
+        // Translations
+        const translations = {
+            en: {
+                nav_home: "Home",
+                nav_about: "About",
+                nav_menu: "Menu",
+                nav_events: "Events",
+                nav_gallery: "Gallery",
+                nav_contact: "Contact",
+                explore_menu: "Explore Our Menu",
+                get_in_touch: "Get In Touch",
+                contact_subtitle: "We'd love to hear from you. Send us a message or visit us at our location.",
+                send_message: "Send a Message",
+                full_name: "Full Name",
+                email_address: "Email Address",
+                message: "Message",
+                send_message_btn: "Send Message",
+                our_location: "Our Location",
+                phone: "Phone:",
+                opening_hours: "Opening Hours",
+                hours_tue_sun: "Tuesday - Sunday: 11:00 AM - 10:00 PM",
+                hours_mon: "Monday: Closed",
+                follow_us: "Follow Us",
+                select_language: "Select Language:",
+                lang_english: "English",
+                lang_hindi: "हिंदी"
+            },
+            hi: {
+                nav_home: "होम",
+                nav_about: "हमारे बारे में",
+                nav_menu: "मेन्यू",
+                nav_events: "कार्यक्रम",
+                nav_gallery: "गैलरी",
+                nav_contact: "संपर्क करें",
+                explore_menu: "हमारा मेन्यू देखें",
+                get_in_touch: "संपर्क करें",
+                contact_subtitle: "हम आपसे सुनना पसंद करेंगे। हमें संदेश भेजें या हमारे स्थान पर हमसे मिलें।",
+                send_message: "संदेश भेजें",
+                full_name: "पूरा नाम",
+                email_address: "ईमेल पता",
+                message: "संदेश",
+                send_message_btn: "संदेश भेजें",
+                our_location: "हमारा स्थान",
+                phone: "फोन:",
+                opening_hours: "खुलने का समय",
+                hours_tue_sun: "मंगलवार - रविवार: सुबह 11:00 - रात 10:00",
+                hours_mon: "सोमवार: बंद",
+                follow_us: "हमें फॉलो करें",
+                select_language: "भाषा चुनें:",
+                lang_english: "English",
+                lang_hindi: "हिंदी"
+            }
+        };
+
+        let currentLang = localStorage.getItem('siteLanguage') || 'en';
+        
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('siteLanguage', lang);
+            document.getElementById('current-lang').textContent = lang === 'en' ? 'English' : 'हिंदी';
+            updatePageLanguage();
+            lucide.createIcons();
+        }
+        
+        function updatePageLanguage() {
+            const t = translations[currentLang];
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    el.textContent = t[key];
+                }
+            });
+        }
+        
+        // Initialize language on load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('current-lang').textContent = currentLang === 'en' ? 'English' : 'हिंदी';
+            updatePageLanguage();
         });
 
         // Contact Form Submission
