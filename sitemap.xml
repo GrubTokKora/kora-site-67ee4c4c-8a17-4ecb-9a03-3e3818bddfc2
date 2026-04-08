@@ -1,13 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://staging.kora-67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2.pages.dev/</loc>
-    <lastmod>2024-07-26</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://staging.kora-67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2.pages.dev/contact.html</loc>
-    <lastmod>2024-07-26</lastmod>
-    <priority>0.8</priority>
-  </url>
-</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://staging.kora-67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2.pages.dev/contact</loc><lastmod>2026-04-08</lastmod><priority>1.0</priority></url><url><loc>https://staging.kora-67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2.pages.dev</loc><lastmod>2026-04-08</lastmod><priority>0.8</priority></url></urlset>
