@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@source "../**/*.html";
+@source "../assets/**/*.js";
+@theme {
+  --color-primary: #0055FF;
+  --color-secondary: #F3F4F6;
+  --color-accent: #2A7FFF;
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+@layer base {
+  body { font-family: var(--font-body); }
+  h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
+}
