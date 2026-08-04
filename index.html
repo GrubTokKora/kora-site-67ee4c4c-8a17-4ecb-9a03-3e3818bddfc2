@@ -1492,8 +1492,15 @@
   .menu-tabs {
     display: flex;
     gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    margin-bottom: 28px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  .menu-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 
   .menu-tab {
@@ -1510,6 +1517,7 @@
     color: var(--c-mid);
     transition: background 200ms ease, color 200ms ease, border-color 200ms ease, transform 200ms ease;
     user-select: none;
+    flex-shrink: 0;
   }
   .menu-tab:hover {
     border-color: var(--c-accent);
@@ -1853,6 +1861,13 @@
 
     function activateTab(targetTab) {
       var panelId = targetTab.getAttribute('data-panel');
+
+      // Auto-scroll the tab into view within the scrollable container
+      targetTab.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
 
       tabs.forEach(function(t) {
         var isActive = t === targetTab;
