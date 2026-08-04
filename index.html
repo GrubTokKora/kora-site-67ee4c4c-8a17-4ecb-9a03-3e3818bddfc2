@@ -1868,6 +1868,14 @@
     function activateTab(targetTab) {
       var panelId = targetTab.getAttribute('data-panel');
 
+      // Scroll the page to the top of the menu section
+      var menuSection = document.getElementById('menu');
+      if (menuSection) {
+        var headerHeight = 68;
+        var top = menuSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+
       // Auto-scroll the tab into view within the scrollable container
       targetTab.scrollIntoView({
         behavior: 'smooth',
