@@ -167,9 +167,9 @@
       --space-section-lg: 140px;
 
       /* Brand palette (runtime reference) */
-      --c-primary:   #0055FF;
-      --c-secondary: #F3F4F6;
-      --c-accent:    #2A7FFF;
+      --c-primary:   #000000;
+      --c-secondary: #F5F5F5;
+      --c-accent:    #8A8A8A;
       --c-white:     #FFFFFF;
       --c-dark:      #0F172A;
       --c-mid:       #475569;
@@ -686,13 +686,13 @@
       border-radius: 100px;
       font-size: var(--text-sm);
       font-weight: 700;
-      box-shadow: 0 4px 20px rgba(0, 85, 255, 0.35);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
       transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
     }
     .float-call:hover {
       background: var(--c-accent);
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(0, 85, 255, 0.4);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
     }
     @media (min-width: 900px) {
       .float-call { padding: 14px 24px; }
@@ -807,8 +807,8 @@
       linear-gradient(
         170deg,
         rgba(0, 0, 0, 0.12) 0%,
-        rgba(0, 30, 100, 0.55) 50%,
-        rgba(0, 20, 80, 0.88) 100%
+        rgba(0, 0, 0, 0.55) 50%,
+        rgba(0, 0, 0, 0.88) 100%
       );
     z-index: 1;
   }
@@ -1174,7 +1174,7 @@
   }
   .about-img-secondary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 14px 40px rgba(0, 85, 255, 0.15);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.15);
   }
   .about-img-secondary img {
     width: 100%;
@@ -1217,7 +1217,7 @@
     border-radius: 12px;
     padding: 14px 18px;
     z-index: 3;
-    box-shadow: 0 6px 24px rgba(0, 85, 255, 0.35);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
     text-align: center;
     min-width: 88px;
   }
@@ -1282,7 +1282,7 @@
     width: 40px;
     height: 40px;
     border-radius: 10px;
-    background: rgba(0, 85, 255, 0.08);
+    background: rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1291,7 +1291,7 @@
     transition: background 200ms ease;
   }
   .about-feature-item:hover .about-feature-icon {
-    background: rgba(0, 85, 255, 0.14);
+    background: rgba(0, 0, 0, 0.14);
   }
 
   .about-feature-text {
@@ -1536,7 +1536,7 @@
     border-radius: 50%;
     font-size: 0.6875rem;
     font-weight: 700;
-    background: rgba(0, 85, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     color: var(--c-primary);
     transition: background 200ms ease, color 200ms ease;
   }
@@ -2043,7 +2043,7 @@
     inset: 0;
     background: linear-gradient(
       to top,
-      rgba(0, 20, 80, 0.55) 0%,
+      rgba(0, 0, 0, 0.55) 0%,
       transparent 60%
     );
     opacity: 0;
@@ -2612,7 +2612,7 @@
     overflow: hidden;
   }
   .review-card:hover {
-    box-shadow: 0 8px 32px rgba(0, 85, 255, 0.09);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.09);
     transform: translateY(-2px);
   }
 
@@ -2637,7 +2637,7 @@
   .review-quote-mark {
     font-size: 3.5rem;
     line-height: 0.8;
-    color: rgba(0, 85, 255, 0.10);
+    color: rgba(0, 0, 0, 0.10);
     font-family: Georgia, serif;
     font-weight: 700;
     margin-bottom: 12px;
@@ -2677,7 +2677,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(0, 85, 255, 0.10);
+    background: rgba(0, 0, 0, 0.10);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2966,7 +2966,7 @@
 
   /* Today highlight row */
   .hours-row.is-today {
-    background: rgba(0, 85, 255, 0.04);
+    background: rgba(0, 0, 0, 0.04);
     margin-left: -8px;
     margin-right: -8px;
     padding-left: 8px;
@@ -3085,14 +3085,14 @@
   }
   .location-detail-card:hover {
     border-color: var(--c-accent);
-    box-shadow: 0 4px 16px rgba(0, 85, 255, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   }
 
   .location-detail-icon {
     width: 36px;
     height: 36px;
     border-radius: 9px;
-    background: rgba(0, 85, 255, 0.09);
+    background: rgba(0, 0, 0, 0.09);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3101,7 +3101,7 @@
     transition: background 200ms ease;
   }
   .location-detail-card:hover .location-detail-icon {
-    background: rgba(0, 85, 255, 0.16);
+    background: rgba(0, 0, 0, 0.16);
   }
 
   .location-detail-label {
@@ -3516,7 +3516,7 @@
   .contact-textarea:focus {
     border-color: var(--c-primary);
     background-color: var(--c-white);
-    box-shadow: 0 0 0 3px rgba(0, 85, 255, 0.10);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.10);
   }
   .contact-input.has-error,
   .contact-textarea.has-error {
@@ -3699,7 +3699,7 @@
     transition: box-shadow 200ms ease, border-color 200ms ease;
   }
   .contact-social-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 85, 255, 0.09);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
     border-color: var(--c-accent);
   }
 
@@ -3724,7 +3724,7 @@
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: rgba(0, 85, 255, 0.08);
+    background: rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
