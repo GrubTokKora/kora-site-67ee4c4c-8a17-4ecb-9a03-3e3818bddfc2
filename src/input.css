@@ -2,10 +2,10 @@
 @source "../**/*.html";
 @source "../assets/**/*.js";
 @theme {
-  --color-primary: #0055FF;
-  --color-secondary: #F3F4F6;
-  --color-accent: #2A7FFF;
-  --font-heading: "Inter", sans-serif;
+  --color-primary: #000000;
+  --color-secondary: #F5F5F5;
+  --color-accent: #8A8A8A;
+  --font-heading: "Nunito";
   --font-body: "Inter", sans-serif;
 }
 @layer base {
