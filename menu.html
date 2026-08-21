@@ -52,7 +52,12 @@
     @media (min-width: 900px) { .nav-desktop { display: flex; } }
     .nav-link { font-size: var(--text-sm); font-weight: 600; color: rgba(255,255,255,0.85); text-decoration: none; }
     .nav-link:hover { color: #fff; }
-    .menu-section { padding: 120px 0; }
+    .page-hero { position: relative; height: 40vh; min-height: 320px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; padding-top: 68px; }
+    .page-hero .hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .page-hero .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .page-hero .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)); z-index: 1; }
+    .page-hero .container { position: relative; z-index: 2; }
+    .menu-section { padding: 80px 0 120px; }
     .menu-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
     @media (min-width: 768px) { .menu-grid { grid-template-columns: 1fr 1fr; } }
     .menu-category-title { font-size: var(--text-xl); font-weight: 700; margin-bottom: 24px; border-bottom: 2px solid var(--c-primary); display: inline-block; padding-bottom: 4px; }
@@ -93,10 +98,22 @@
 </div>
 </header>
 <main>
+<section class="page-hero">
+<div class="hero-bg">
+<img alt="Maganlal Bhakhari Shak Wala Menu" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='600'%20height='400'%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%23e5e7eb'/%3E%3C/svg%3E"/>
+</div>
+<div class="hero-overlay"></div>
+<div class="container">
+<div class="hero-content">
+<h1 class="t-h2" style="color: #fff; margin-bottom: 12px;">Our Menu</h1>
+<p style="color: rgba(255,255,255,0.85); font-size: 1.125rem; max-width: 600px; margin: 0 auto;">Authentic Gujarati flavors and homestyle cooking, prepared fresh for you every day.</p>
+</div>
+</div>
+</section>
 <section class="menu-section">
 <div class="container">
-<span class="section-label">Our Menu</span>
-<h1 class="t-h2" style="margin-bottom:48px;">Authentic Gujarati &amp; Global Flavours</h1>
+<span class="section-label">Full Selection</span>
+<h2 class="t-h2" style="margin-bottom:48px;">Authentic Gujarati &amp; Global Flavours</h2>
 <div class="menu-grid">
 <div>
 <h2 class="menu-category-title">Appetizers</h2>
@@ -172,7 +189,7 @@
     wrapper.setAttribute('data-kora-branding-footer', 'true');
     wrapper.style.cssText = 'display:flex;justify-content:flex-end;align-items:center;gap:0.35rem;padding:0.75rem 1rem;font-size:0.75rem;';
     wrapper.innerHTML = '<span style="color:' + muted + '">Powered by</span>' +
-      '<a href="' + koraUrl + '" target="_blank" rel="noopener noreferrer" style="text-decoration:none;font-weight:600;background:linear-gradient(135deg,' + blue + ',' + purple + ');-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Kora</a>';
+      '<a href="' + koraUrl + '" target="_blank" rel="nofollow noopener noreferrer" style="text-decoration:none;font-weight:600;background:linear-gradient(135deg,' + blue + ',' + purple + ');-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Kora</a>';
     return wrapper;
   }
 
