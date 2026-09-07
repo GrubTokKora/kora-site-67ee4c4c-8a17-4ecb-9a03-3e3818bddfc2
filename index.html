@@ -941,12 +941,32 @@
 
   .hero-headline {
     font-family: 'Marlin', sans-serif;
-    font-size: clamp(2.6rem, 7vw, 5rem);
+    font-size: clamp(2.5rem, 6.2vw, 4.6rem);
     font-weight: 800;
-    line-height: 1.0;
-    letter-spacing: -0.035em;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
     color: #fff;
     margin-bottom: 20px;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+  }
+
+  .hero-title-brand {
+    display: block;
+    font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #FBBF24;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  }
+
+  .hero-title-highlight {
+    background: linear-gradient(135deg, #ffffff 10%, #fef3c7 50%, #fcd34d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
   }
 
   .hero-headline em {
@@ -1098,7 +1118,8 @@
             Authentic Gujarati Cuisine
           </div>
 <h1 class="hero-headline">
-            Maganlal Bhakhri Shak Wala: Authentic Gujarati Thali for Dine-In &amp; Takeout in Mehsana
+<span class="hero-title-brand">Maganlal Bhakhri Shak Wala</span>
+            Authentic Gujarati <span class="hero-title-highlight">Bhakhri &amp; Shak</span>, Freshly Made in Mehsana
           </h1>
 <p class="hero-sub">
             Homestyle Indian cooking made with love. Bhakhri prepared fresh in front of you — sev tameta, kadhi, buttermilk and more, every single day.
