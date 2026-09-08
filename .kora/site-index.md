@@ -39,6 +39,7 @@ contains:
 - "Appetizers" — menu items
 - "Main Course" — menu items
 - "Beverages" — menu items
+- "Gujarati Special" — menu items
 - call to action for daily specials
 
 ## shared (every page)
