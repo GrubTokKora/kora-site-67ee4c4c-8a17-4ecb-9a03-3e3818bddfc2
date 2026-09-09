@@ -34,12 +34,11 @@ contains:
 
 ## menu.html → /menu
 title: Maganlal Bhakhri Shak Wala - Authentic Bhakhri &amp; Shak in Mehsana | Takeout &amp; Dine-in
-purpose: This page displays the restaurant's full menu, categorized into sections like Appetizers, Main Course, Beverages, and Gujarati Specialties. It also includes a…
+purpose: This page displays the restaurant's full menu, categorized into sections like Appetizers, Main Course, and Beverages. It also includes a…
 contains:
 - "Appetizers" — menu items
 - "Main Course" — menu items
 - "Beverages" — menu items
-- "Gujarati Special" — menu items
 - call to action for daily specials
 
 ## shared (every page)
