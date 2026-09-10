@@ -14,13 +14,13 @@ A traditional Gujarati vegetarian restaurant specializing in bhakhri (thick flat
 - Email: umang.kaila@kysz.tech
 
 ## Hours
-- Monday: Closed
-- Tuesday: Closed
-- Wednesday: Closed
-- Thursday: Closed
-- Friday: Closed
-- Saturday: Closed
-- Sunday: Closed
+- Monday: 9:00 AM – 11:00 PM
+- Tuesday: 9:00 AM – 11:00 PM
+- Wednesday: 9:00 AM – 11:00 PM
+- Thursday: 9:00 AM – 11:00 PM
+- Friday: 9:00 AM – 11:00 PM
+- Saturday: 9:00 AM – 11:00 PM
+- Sunday: 9:00 AM – 11:00 PM
 
 ## Action Links
 - Order Online Now: tel:+918490082336
