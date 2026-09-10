@@ -1,6 +1,6 @@
 # Maganlal Bhakhri Shak Wala
 
-> Maganlal Bhakhri Shak Wala — Fresh food, friendly faces.
+> Maganlal Bhakhri Shak Wala is a traditional Gujarati vegetarian restaurant that specializes in thick flatbreads known as bhakhri served alongside various vegetable preparations. The establishment offers local dishes, thalis, and other Indian staples.
 
 ## Menu
 A traditional Gujarati vegetarian restaurant specializing in bhakhri (thick flatbreads) served with various shaks (vegetable preparations). The menu likely features a range of local dishes, thalis, and other Indian staples.
@@ -14,13 +14,13 @@ A traditional Gujarati vegetarian restaurant specializing in bhakhri (thick flat
 - Email: umang.kaila@kysz.tech
 
 ## Hours
-- Monday: 9:00 AM – 11:00 PM
-- Tuesday: 9:00 AM – 11:00 PM
-- Wednesday: 9:00 AM – 11:00 PM
-- Thursday: 9:00 AM – 11:00 PM
-- Friday: 9:00 AM – 11:00 PM
-- Saturday: 9:00 AM – 11:00 PM
-- Sunday: 9:00 AM – 11:00 PM
+- Monday: Closed
+- Tuesday: Closed
+- Wednesday: Closed
+- Thursday: Closed
+- Friday: Closed
+- Saturday: Closed
+- Sunday: Closed
 
 ## Action Links
 - Order Online Now: tel:+918490082336
