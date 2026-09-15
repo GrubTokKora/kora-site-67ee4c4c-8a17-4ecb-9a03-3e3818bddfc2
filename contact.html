@@ -2,6 +2,15 @@
 
 <html lang="en">
 <head>
+<!-- KORA_TRACKING_GTM_HEAD_START -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXX7WZF5');</script>
+<!-- End Google Tag Manager -->
+<!-- KORA_TRACKING_GTM_HEAD_END -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contact Us | Maganlal Bhakhri Shak Wala Mehsana</title>
@@ -57,6 +66,12 @@
 <!-- KORA_FAVICON_END -->
 </head>
 <body>
+<!-- KORA_TRACKING_GTM_BODY_START -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXX7WZF5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- KORA_TRACKING_GTM_BODY_END -->
 <header class="site-header">
 <div class="container">
 <div class="header-inner">
@@ -186,11 +201,61 @@
 </div>
 </div>
 </footer>
+<!-- KORA_TRACKING_EVENTS_START -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function trackEvent(eventName, params) {
+    window.dataLayer.push(Object.assign({ event: eventName }, params || {}));
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    function cleanText(value) {
+      return (value || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function toPath(href) {
+      try {
+        if (!href) return null;
+        var url = new URL(href, window.location.origin);
+        return url.pathname || '/';
+      } catch (e) {
+        return null;
+      }
+    }
+
+    document.querySelectorAll('button, a').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var clickId =
+          el.getAttribute('data-kora-click-id') ||
+          el.getAttribute('data-analytics-id') ||
+          el.getAttribute('id') ||
+          null;
+        var clickLabel =
+          el.getAttribute('data-kora-click-label') ||
+          cleanText(el.innerText || el.textContent || '') ||
+          null;
+        var href = el.getAttribute('href') || null;
+        trackEvent('button_click', {
+          click_id: clickId,
+          click_label: clickLabel,
+          page_path: window.location.pathname || '/',
+          link_url: href,
+          element_id: el.getAttribute('id') || null,
+          element_class: el.getAttribute('class') || null,
+          link_path: toPath(href),
+        });
+      });
+    });
+  });
+</script>
+<!-- KORA_TRACKING_EVENTS_END -->
 <!-- KORA_BRANDING_FOOTER_SCRIPT_START -->
 <script>
 (function () {
   var koraUrl = "https://askkora.ai";
-  var muted = "#64748b";
+  var muted = "#475569";
+  var mutedBg = "#f1f5f9";
   var blue = "#1E88E5";
   var purple = "#7B1FA2";
   var startMarker = 'KORA_' + 'BRANDING_FOOTER_START';
@@ -218,7 +283,7 @@
     wrapper.className = 'kora-powered-by';
     wrapper.setAttribute('data-kora-branding-footer', 'true');
     wrapper.style.cssText = 'display:flex;justify-content:flex-end;align-items:center;gap:0.35rem;padding:0.75rem 1rem;font-size:0.75rem;';
-    wrapper.innerHTML = '<span style="color:' + muted + '">Powered by</span>' +
+    wrapper.innerHTML = '<span style="color:' + muted + ';background:' + mutedBg + ';padding:0.15rem 0.55rem;border-radius:9999px;">Powered by</span>' +
       '<a href="' + koraUrl + '" target="_blank" rel="nofollow noopener noreferrer" style="text-decoration:none;font-weight:600;background:linear-gradient(135deg,' + blue + ',' + purple + ');-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Kora</a>';
     return wrapper;
   }
