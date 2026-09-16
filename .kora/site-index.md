@@ -41,6 +41,12 @@ contains:
 - "Beverages" — menu items
 - call to action for daily specials
 
+## add-a-new-page-for-newsletter-signup.html → /add-a-new-page-for-newsletter-signup
+title: Newsletter Signup | Maganlal Bhakhri Shak Wala Mehsana
+purpose: The page allows visitors to subscribe to email and SMS updates for exclusive Gujarati cuisine offers, festival specials, and restaurant news.
+contains:
+- "Newsletter Signup" — subscription form with email and phone inputs, granular opt-in checkboxes, and subscriber perks
+
 ## shared (every page)
 The header, navigation, mobile menu and footer are propagated from index.html to every other page by
 `shell_propagation`. A change to any of them is made on index.html alone and copied automatically.
