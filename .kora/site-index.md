@@ -8,6 +8,7 @@ contains:
 - `#gallery` — gallery of restaurant images with a link to Instagram
 - `#reviews` — customer reviews with aggregate rating and individual review cards
 - `#visit-teaser` — visit teaser section with restaurant location and links to hours and contact pages
+- `#instagram-feed` — live Instagram feed displaying recent posts and account link
 
 ## about.html → /about
 title: Maganlal Bhakhri Shak Wala Mehsana: Delicious Lunch, Dinner &amp; Takeout
