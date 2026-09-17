@@ -26,6 +26,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "@type": "ContactPage",
   "mainEntity": {}
 }</script>
+<script>
+  window.KORA_SITE_CONFIG = {
+    apiBaseUrl: "https://kora-agent.quseappdev.com",
+    businessId: "67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2",
+    recaptchaSiteKey: "6LfRt44sAAAAACVTvFvGjoufmEcZqZk_pT4T_5Xd"
+  };
+  window.KORA_CONFIG = Object.assign(window.KORA_CONFIG || {}, window.KORA_SITE_CONFIG);
+</script>
 <style>
     :root {
       --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem; --text-lg: 1.125rem; --text-xl: 1.25rem; --text-2xl: 1.5rem; --text-3xl: 1.875rem; --text-4xl: 2.25rem; --text-5xl: 3rem;
@@ -100,6 +108,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="contact-grid">
 <div>
 <div class="info-card">
+<h2 style="font-size:1.5rem; margin-bottom:12px;">Send Us a Message</h2>
+<p style="color:var(--c-mid); margin-bottom:24px; font-size:0.9375rem;">Have questions about our authentic Gujarati dishes, takeout orders, or catering? Send us a message and we'll get back to you promptly.</p>
+<form id="contact-form" novalidate="">
+<div style="margin-bottom:16px;">
+<label for="contact-name" style="display:block; font-size:0.875rem; font-weight:700; color:var(--c-dark); margin-bottom:6px;">Your Name *</label>
+<input id="contact-name" name="name" placeholder="Enter your full name" required="" style="width:100%; padding:12px 16px; border-radius:8px; border:1px solid var(--c-border); background-color:#FFFFFF; color:#0F172A; font-family:inherit; font-size:0.9375rem; box-sizing:border-box;" type="text"/>
+</div>
+<div style="margin-bottom:16px;">
+<label for="contact-email" style="display:block; font-size:0.875rem; font-weight:700; color:var(--c-dark); margin-bottom:6px;">Email Address *</label>
+<input id="contact-email" name="email" placeholder="name@example.com" required="" style="width:100%; padding:12px 16px; border-radius:8px; border:1px solid var(--c-border); background-color:#FFFFFF; color:#0F172A; font-family:inherit; font-size:0.9375rem; box-sizing:border-box;" type="email"/>
+</div>
+<div style="margin-bottom:16px;">
+<label for="contact-phone" style="display:block; font-size:0.875rem; font-weight:700; color:var(--c-dark); margin-bottom:6px;">Phone Number (Optional)</label>
+<input id="contact-phone" name="phone" placeholder="+91 00000 00000" style="width:100%; padding:12px 16px; border-radius:8px; border:1px solid var(--c-border); background-color:#FFFFFF; color:#0F172A; font-family:inherit; font-size:0.9375rem; box-sizing:border-box;" type="tel"/>
+</div>
+<div style="margin-bottom:20px;">
+<label for="contact-message" style="display:block; font-size:0.875rem; font-weight:700; color:var(--c-dark); margin-bottom:6px;">Your Message *</label>
+<textarea id="contact-message" name="message" placeholder="How can we help you today?" required="" rows="4" style="width:100%; padding:12px 16px; border-radius:8px; border:1px solid var(--c-border); background-color:#FFFFFF; color:#0F172A; font-family:inherit; font-size:0.9375rem; box-sizing:border-box; resize:vertical;"></textarea>
+</div>
+<div class="g-recaptcha" data-sitekey="6LfRt44sAAAAACVTvFvGjoufmEcZqZk_pT4T_5Xd" id="contact-recaptcha" style="margin-bottom:20px;"></div>
+<button id="contact-submit-btn" style="display:block; width:100%; text-align:center; background:var(--c-primary); color:#FFFFFF; border:none; padding:14px; border-radius:8px; font-weight:700; font-size:1rem; cursor:pointer;" type="submit">Send Message</button>
+<div id="contact-form-status" style="margin-top:16px; font-size:0.875rem; font-weight:600; display:none;"></div>
+</form>
+</div>
+</div>
+<div>
+<div class="info-card">
 <h2 style="font-size:1.25rem; margin-bottom:16px;">Contact Details</h2>
 <p style="margin-bottom:12px;"><strong>Phone:</strong> <a href="tel:+918490082336" style="color:inherit;">+918490082336</a></p>
 <p style="margin-bottom:12px;"><strong>Email:</strong> <a href="mailto:umang.kaila@kysz.tech" style="color:inherit;">umang.kaila@kysz.tech</a></p>
@@ -109,8 +144,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a href="hours.html" style="color: var(--c-primary); text-decoration: underline; font-weight: 600;">View Opening Hours →</a>
 </div>
 </div>
-</div>
-<div>
 <div class="map-wrap">
 <iframe allowfullscreen="" height="100%" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4451.153549417367!2d72.37793927598379!3d23.59949849455154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c43cd75abc0d5%3A0x12bd6cdf67134b44!2sMaganlal%20Bhakhri%20Shak%20Wala%2C%20Gayatri%20Restaurant!5e1!3m2!1sen!2sin!4v1785843374693!5m2!1sen!2sin" style="border:0;" width="100%"></iframe>
 </div>
@@ -120,6 +153,140 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </section>
 </main>
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+
+  var recaptchaLoaded = false;
+  function loadRecaptcha() {
+    if (recaptchaLoaded) return;
+    recaptchaLoaded = true;
+    var s = document.createElement('script');
+    s.src = 'https://www.google.com/recaptcha/api.js';
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+
+  form.addEventListener('focusin', loadRecaptcha, { once: true });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    loadRecaptcha();
+
+    var statusEl = document.getElementById('contact-form-status');
+    var submitBtn = document.getElementById('contact-submit-btn');
+
+    function showStatus(msg, isError) {
+      if (!statusEl) return;
+      statusEl.style.display = 'block';
+      statusEl.style.color = isError ? '#dc2626' : '#16a34a';
+      statusEl.textContent = msg;
+    }
+
+    var cfg = window.KORA_SITE_CONFIG || window.KORA_CONFIG || {};
+    var apiBaseUrl = (cfg.apiBaseUrl || '').replace(/\/+$/, '');
+    var businessId = cfg.businessId;
+
+    if (!apiBaseUrl || !businessId) {
+      showStatus('Form configuration missing. Please try again later.', true);
+      return;
+    }
+
+    var nameInput = document.getElementById('contact-name');
+    var emailInput = document.getElementById('contact-email');
+    var phoneInput = document.getElementById('contact-phone');
+    var messageInput = document.getElementById('contact-message');
+
+    var name = (nameInput ? nameInput.value : '').trim();
+    var email = (emailInput ? emailInput.value : '').trim();
+    var phone = (phoneInput ? phoneInput.value : '').trim();
+    var message = (messageInput ? messageInput.value : '').trim();
+
+    if (!name) {
+      showStatus('Please enter your name.', true);
+      if (nameInput) nameInput.focus();
+      return;
+    }
+
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      showStatus('Please enter a valid email address.', true);
+      if (emailInput) emailInput.focus();
+      return;
+    }
+
+    if (!message) {
+      showStatus('Please enter your message.', true);
+      if (messageInput) messageInput.focus();
+      return;
+    }
+
+    if (typeof grecaptcha === 'undefined') {
+      showStatus('Security check loading — please try again.', true);
+      return;
+    }
+
+    var captchaToken = grecaptcha.getResponse();
+    if (!captchaToken) {
+      showStatus('Please complete the security check.', true);
+      return;
+    }
+
+    var formData = {
+      name: name,
+      email: email,
+      message: message
+    };
+    if (phone) {
+      formData.phone = phone;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+    var originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    showStatus('Sending your message...', false);
+
+    fetch(apiBaseUrl + '/api/v1/public/forms/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        business_id: businessId,
+        form_type: 'contact',
+        form_data: formData,
+        submitter_email: email,
+        captcha_token: captchaToken
+      })
+    })
+    .then(function (res) {
+      if (!res.ok) {
+        throw new Error('Server returned ' + res.status);
+      }
+      return res.json().catch(function () { return {}; });
+    })
+    .then(function () {
+      showStatus('Thank you! Your message has been sent successfully. We will get back to you soon.', false);
+      form.reset();
+      if (typeof grecaptcha !== 'undefined' && grecaptcha.reset) {
+        grecaptcha.reset();
+      }
+    })
+    .catch(function (err) {
+      console.error('Contact form submission error:', err);
+      showStatus('Sorry, there was an issue sending your message. Please call us directly or try again.', true);
+    })
+    .finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '1';
+      submitBtn.textContent = originalBtnText;
+    });
+  });
+})();
+</script>
 <footer class="site-footer" role="contentinfo">
 <div class="container">
 <div class="footer-top">

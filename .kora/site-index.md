@@ -22,8 +22,9 @@ contains:
 
 ## contact.html → /contact
 title: Contact Us | Maganlal Bhakhari Shak Wala Mehsana
-purpose: The page provides contact information for Maganlal Bhakhri Shak Wala, including their address, phone number, email, and a map.
+purpose: The page provides contact information for Maganlal Bhakhri Shak Wala, including their address, phone number, email, a contact form, and a map.
 contains:
+- "Send Us a Message" — visitor contact form
 - "Contact Details" — contact information
 - "Map" — map and directions
 
