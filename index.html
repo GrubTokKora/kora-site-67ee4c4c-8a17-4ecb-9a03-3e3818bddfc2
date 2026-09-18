@@ -2119,6 +2119,89 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </section>
 
+<section id="instagram-feed" hidden>
+<div class="section-pad bg-secondary">
+<div class="container">
+<div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 44px;">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px;">
+<div>
+<span class="section-label">Instagram Feed</span>
+<h2 class="t-h2" style="color: var(--c-dark); margin-bottom: 8px;">Follow Us on Instagram</h2>
+<div class="section-divider"></div>
+</div>
+<a aria-label="Visit Instagram profile" class="btn btn-outline-dark" data-ig-profile="" data-ig-username="" href="https://www.instagram.com/_mann30__/" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+<line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+</svg>
+@_mann30__
+</a>
+</div>
+</div>
+<div class="ig-grid" data-ig-grid=""></div>
+<div style="margin-top: 44px; text-align: center;">
+<a class="btn btn-primary" data-ig-profile="" href="https://www.instagram.com/_mann30__/" rel="noopener" target="_blank">
+View on Instagram
+<svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<script>
+(function () {
+  var section = document.getElementById('instagram-feed');
+  if (!section) return;
+  var cfg = window.KORA_CONFIG || window.KORA_SITE_CONFIG || {};
+  var apiBaseUrl = (cfg.apiBaseUrl || '').replace(/\/+$/, '');
+  var businessId = cfg.businessId;
+  if (!apiBaseUrl || !businessId) return;
+
+  var url = apiBaseUrl + '/api/v1/public/instagram/feed?business_id=' + encodeURIComponent(businessId);
+  fetch(url, { headers: { Accept: 'application/json' } })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      if (!data || !data.enabled || !data.items || !data.items.length) return;
+      var handle = data.username ? '@' + data.username : '';
+      section.querySelectorAll('[data-ig-username]').forEach(function (el) {
+        el.textContent = handle;
+        if (data.profile_url) el.setAttribute('href', data.profile_url);
+      });
+      section.querySelectorAll('[data-ig-profile]').forEach(function (el) {
+        if (data.profile_url) el.setAttribute('href', data.profile_url);
+      });
+      var grid = section.querySelector('[data-ig-grid]');
+      if (!grid) return;
+      grid.innerHTML = '';
+      data.items.forEach(function (item) {
+        var a = document.createElement('a');
+        a.href = item.permalink;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.className = 'ig-tile';
+        var img = document.createElement('img');
+        img.src = item.image_url;
+        img.alt = item.caption || ('Instagram post by ' + handle);
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        a.appendChild(img);
+        if (item.media_type === 'VIDEO') {
+          var badge = document.createElement('span');
+          badge.className = 'ig-video-badge';
+          badge.setAttribute('aria-hidden', 'true');
+          badge.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>';
+          a.appendChild(badge);
+        }
+        grid.appendChild(a);
+      });
+      section.hidden = false;
+    })
+    .catch(function (err) { console.error('Instagram feed failed', err); });
+})();
+</script>
+</section>
 
 </main>
 <!-- =============================================
