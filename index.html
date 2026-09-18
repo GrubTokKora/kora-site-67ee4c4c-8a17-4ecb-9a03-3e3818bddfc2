@@ -864,7 +864,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="hero">
 <style>
   /* =============================================
-     HERO SECTION STYLES (PREMIUM REFINED)
+     HERO SECTION STYLES
      ============================================= */
   .hero-section {
     position: relative;
@@ -886,40 +886,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 38%;
-    transform: scale(1.03);
-    transition: transform 1200ms ease-out;
+    object-position: center 40%;
   }
 
-  /* Lightened gradient overlay: keeps the food photography luminous and clearly visible */
+  /* Layered overlay: deep blue at bottom, transparent at top-right */
   .hero-overlay {
     position: absolute;
     inset: 0;
     background:
       linear-gradient(
-        90deg,
-        rgba(8, 12, 18, 0.64) 0%,
-        rgba(8, 12, 18, 0.40) 46%,
-        rgba(8, 12, 18, 0.10) 78%,
-        rgba(8, 12, 18, 0.04) 100%
-      ),
-      linear-gradient(
-        0deg,
-        rgba(8, 12, 18, 0.58) 0%,
-        rgba(8, 12, 18, 0.12) 50%,
-        rgba(8, 12, 18, 0.22) 100%
+        170deg,
+        rgba(0, 0, 0, 0.12) 0%,
+        rgba(0, 0, 0, 0.55) 50%,
+        rgba(0, 0, 0, 0.88) 100%
       );
     z-index: 1;
   }
 
-/* Subtle vertical accent indicator */
+  /* Accent colour bar — left edge tension element */
   .hero-accent-bar {
     position: absolute;
     left: 0;
     top: 68px;
     bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 60%, transparent 100%);
+    width: 5px;
+    background: var(--c-primary);
     z-index: 2;
   }
 
@@ -927,97 +918,107 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     position: relative;
     z-index: 3;
     width: 100%;
-    padding-bottom: 80px;
-    padding-top: 80px;
+    padding-bottom: 72px;
+    padding-top: 60px;
   }
 
   @media (min-width: 768px) {
     .hero-content-wrap {
-      padding-bottom: 112px;
-      padding-top: 100px;
+      padding-bottom: 96px;
+      padding-top: 80px;
     }
   }
   @media (min-width: 1024px) {
     .hero-content-wrap {
-      padding-bottom: 128px;
+      padding-bottom: 120px;
     }
   }
 
   .hero-inner {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
     align-items: end;
   }
 
   @media (min-width: 900px) {
     .hero-inner {
-      grid-template-columns: 1fr 320px;
-      gap: 72px;
+      grid-template-columns: 1fr 340px;
+      gap: 64px;
       align-items: end;
     }
   }
 
-  /* Minimal clean eyebrow pill */
+  /* Eyebrow label */
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background: rgba(15, 23, 42, 0.45);
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.22);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    color: rgba(255, 255, 255, 0.9);
-    padding: 7px 18px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #fff;
+    padding: 7px 16px;
     border-radius: 100px;
     font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 24px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   }
   .hero-eyebrow-dot {
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    background: #FFFFFF;
+    background: #4ADE80;
     flex-shrink: 0;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);
   }
 
   .hero-headline {
-    font-family: 'Marlin', 'Nunito', sans-serif;
-    font-size: clamp(2.25rem, 4.8vw, 4rem);
-    font-weight: 700;
-    line-height: 1.18;
-    letter-spacing: -0.02em;
-    color: #FFFFFF;
+    font-family: 'Marlin', sans-serif;
+    font-size: clamp(2.5rem, 6.2vw, 4.6rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #fff;
     margin-bottom: 20px;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
   }
 
   .hero-title-brand {
     display: block;
-    font-size: clamp(0.8125rem, 1.2vw, 0.9375rem);
+    font-size: clamp(0.95rem, 1.8vw, 1.2rem);
     font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.22em;
+    font-weight: 800;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 14px;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    color: #FBBF24;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  }
+
+  .hero-title-highlight {
+    background: linear-gradient(135deg, #ffffff 10%, #fef3c7 50%, #fcd34d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  .hero-headline em {
+    font-style: normal;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.85);
   }
 
   .hero-sub {
-    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.88);
-    line-height: 1.75;
-    max-width: 560px;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.65;
+    max-width: 480px;
     margin-bottom: 36px;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
-    letter-spacing: 0.01em;
   }
 
   .hero-actions {
@@ -1027,77 +1028,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     align-items: center;
   }
 
-  .hero-btn-primary {
-    background: var(--c-white);
-    color: var(--c-dark) !important;
-    border-color: var(--c-white);
-    font-weight: 700;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-  }
-  .hero-btn-primary:hover {
-    background: rgba(255, 255, 255, 0.88);
-    border-color: rgba(255, 255, 255, 0.88);
-    color: var(--c-dark) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  .hero-btn-secondary {
-    background: rgba(15, 23, 42, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: #ffffff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-  }
-  .hero-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.22);
-    border-color: rgba(255, 255, 255, 0.8);
-    color: #ffffff;
-    transform: translateY(-2px);
-  }
-
-  /* Clean highlights trust pills */
-  .hero-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 14px;
-    margin-top: 28px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-  }
-  .hero-highlight-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-    letter-spacing: 0.02em;
-    background: rgba(15, 23, 42, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 6px 14px;
-    border-radius: 100px;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-  }
-  .hero-highlight-bullet {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.75rem;
-  }
-
-  /* Floating rating card: clean frosted glass */
   .hero-rating-card {
-    background: rgba(15, 23, 42, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-radius: 18px;
-    padding: 28px 26px 24px;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 28px 28px 24px;
     color: #fff;
     align-self: flex-end;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   }
 
   @media (max-width: 899px) {
@@ -1116,32 +1055,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   .hero-rating-stars {
     color: #FBBF24;
-    font-size: 1.15rem;
-    letter-spacing: 3px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
     margin: 8px 0 6px;
   }
 
   .hero-rating-label {
     font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.65);
     font-weight: 500;
-    letter-spacing: 0.02em;
   }
 
   .hero-rating-divider {
-    width: 36px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.25);
+    width: 32px;
+    height: 3px;
+    background: var(--c-primary);
     border-radius: 2px;
     margin: 16px 0;
   }
 
   .hero-tagline {
     font-size: 0.9375rem;
-    font-weight: 500;
+    font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
     font-style: italic;
-    line-height: 1.45;
+    line-height: 1.4;
   }
 
   /* Scroll cue */
@@ -1163,7 +1101,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.5);
   }
   .hero-scroll-mouse {
     width: 22px;
@@ -1181,7 +1119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     transform: translateX(-50%);
     width: 3px;
     height: 6px;
-    background: #FFFFFF;
+    background: rgba(255,255,255,0.6);
     border-radius: 2px;
     animation: scrollDot 1.6s ease-in-out infinite;
   }
@@ -1194,14 +1132,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   @media (prefers-reduced-motion: reduce) {
     .hero-scroll-cue { opacity: 1 !important; animation: none !important; }
     .hero-scroll-mouse::after { animation: none !important; }
-    .hero-bg img { transform: none !important; }
   }
 </style>
 <!-- Full-bleed image hero with layered overlay and asymmetric content layout -->
 <div class="hero-section">
 <!-- Background image -->
 <div class="hero-bg hero-img-wrap">
-<img alt="Artisanally prepared Gujarati bhakhri and rich traditional shak at Maganlal Bhakhri Shak Wala" decoding="async" fetchpriority="high" height="900" loading="eager" src="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/6b8ae00f-9293-46bb-ac0a-80d50fe3d48c/1779360880_c3lc3k.jpg" width="1600"/>
+<img alt="Freshly baked Gujarati bhakhri served with a side of spicy shak" decoding="async" fetchpriority="high" height="900" loading="eager" src="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/6b8ae00f-9293-46bb-ac0a-80d50fe3d48c/1779360880_c3lc3k.jpg" width="1600"/>
 </div>
 <!-- Gradient overlay -->
 <div aria-hidden="true" class="hero-overlay"></div>
@@ -1215,43 +1152,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="hero-content">
 <div class="hero-eyebrow">
 <span aria-hidden="true" class="hero-eyebrow-dot"></span>
-            Authentic Gujarati Dining · Mehsana
+            Authentic Gujarati Cuisine
           </div>
 <h1 class="hero-headline">
 <span class="hero-title-brand">Maganlal Bhakhri Shak Wala</span>
-            Authentic Gujarati Dining, Handcrafted with Heart
+            Authentic Gujarati <span class="hero-title-highlight">Bhakhri &amp; Shak</span>, Freshly Made in Mehsana
           </h1>
 <p class="hero-sub">
-            Freshly prepared bhakhris and traditional Kathiyawadi shaks, crafted daily with authentic recipes and homestyle hospitality in Mehsana.
+            Homestyle Indian cooking made with love. Bhakhri prepared fresh in front of you — sev tameta, kadhi, buttermilk and more, every single day.
           </p>
 <div class="hero-actions">
-<a class="btn hero-btn-primary" href="tel:+918490082336" style="font-size:0.9375rem; padding:15px 32px;">
+<a class="btn btn-primary" href="tel:+918490082336" style="font-size:0.9375rem; padding:15px 32px;">
 <svg aria-hidden="true" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="17">
 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
 </svg>
               Order Online Now
             </a>
-<a class="btn hero-btn-secondary" href="https://maps.app.goo.gl/WtZSA2B2QKnTRtAV8" rel="noopener noreferrer" style="font-size:0.9375rem; padding:15px 32px;" target="_blank">
+<a class="btn btn-outline" href="https://maps.app.goo.gl/WtZSA2B2QKnTRtAV8" rel="noopener noreferrer" style="font-size:0.9375rem; padding:15px 32px;" target="_blank">
 <svg aria-hidden="true" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="17">
 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
 <circle cx="12" cy="10" r="3"></circle>
 </svg>
               Get Directions
             </a>
-</div>
-<div class="hero-highlights">
-<div class="hero-highlight-item">
-<span class="hero-highlight-bullet">✦</span>
-<span>Live Hand-Crafted Bhakhri</span>
-</div>
-<div class="hero-highlight-item">
-<span class="hero-highlight-bullet">✦</span>
-<span>Time-Honoured Heritage Recipes</span>
-</div>
-<div class="hero-highlight-item">
-<span class="hero-highlight-bullet">✦</span>
-<span>Fresh Local Ingredients</span>
-</div>
 </div>
 </div>
 <!-- Right: floating rating card -->
@@ -1260,7 +1183,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div aria-label="4.8 out of 5 stars" class="hero-rating-stars">★★★★★</div>
 <div class="hero-rating-label">from 5 verified reviews</div>
 <div class="hero-rating-divider"></div>
-<p class="hero-tagline">"Authentic taste,<br/>uncompromising quality."</p>
+<p class="hero-tagline">"Fresh food,<br/>friendly faces."</p>
 </aside>
 </div>
 </div>
