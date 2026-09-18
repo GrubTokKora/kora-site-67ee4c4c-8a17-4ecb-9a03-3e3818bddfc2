@@ -1,6 +1,6 @@
 # Maganlal Bhakhri Shak Wala
 
-> Maganlal Bhakhri Shak Wala — Fresh food, friendly faces.
+> Maganlal Bhakhri Shak Wala is a traditional Gujarati vegetarian restaurant that specializes in bhakhri and various vegetable shaks. The eatery serves local dishes, thalis, and other Indian staples with a focus on fresh food.
 
 ## Menu
 A traditional Gujarati vegetarian restaurant specializing in bhakhri (thick flatbreads) served with various shaks (vegetable preparations). The menu likely features a range of local dishes, thalis, and other Indian staples.
@@ -24,7 +24,7 @@ A traditional Gujarati vegetarian restaurant specializing in bhakhri (thick flat
 - Sunday: Closed
 
 ## Pages
-- [Maganlal Bhakhri Shak Wala - Authentic Bhakhri &amp; Shak in Mehsana |](https://maganlal.askkoraaidev.com/)
+- [Authentic Gujarati Dining, Handcrafted Daily](https://maganlal.askkoraaidev.com/)
 - [Maganlal Bhakhri Shak Wala Mehsana: Delicious Lunch, Dinner &amp; Take](https://maganlal.askkoraaidev.com/about)
 - [Join Our Foodies Newsletter](https://maganlal.askkoraaidev.com/add-a-new-page-for-newsletter-signup)
 - [Contact Us | Maganlal Bhakhri Shak Wala Mehsana](https://maganlal.askkoraaidev.com/contact)
