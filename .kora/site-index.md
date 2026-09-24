@@ -38,9 +38,17 @@ contains:
 title: Maganlal Bhakhri Shak Wala - Authentic Bhakhri &amp; Shak in Mehsana | Takeout &amp; Dine-in
 purpose: This page displays the restaurant's full menu, categorized into sections like Appetizers, Main Course, and Beverages. It also includes a…
 contains:
-- "Appetizers" — menu items
-- "Main Course" — menu items
-- "Beverages" — menu items
+- "Appetizer" — menu items: Edamame, Vegetable Spring Roll, Chicken Cashew Wrap, Roti Canai, Crab Rangoon, Curry Puff, Po Pia Sod, Shrimp Summer Roll, Táo Hoo Tord, Dumpling, Chicken Satay, Chicken Wing, Lime Chili Shrimp, Crispy Calamari, Kong Tod
+- "Soup" — menu items: Tom Yum Goong, Tom Kha Gai, Sweet Corn Soup, Vegetable Soup
+- "Salad" — menu items: Thai Salad, Somtum, Larb, Nua Nam Tok, Duck Salad, Yum Woon Sen
+- "Chef Special" — menu items: Sizzling Pancake, Seafood Delight, Pla Rad Prik, Pla Sam Rod, Salmon Mango Curry, Steamed Ginger Fish, Pineapple Duck Curry, Duck Choo Chee, Duck Ga Prow, Peanut Shrimp Curry, Pra Raam Chicken, Shaking Beef, Laksa Shrimp, Garlic Eggplant Asparagus
+- "Noodle Plate or Rice Plate" — menu items with shared protein options: Pad Thai, Drunken Noodles, Pad See Ew, Pad Woon Sen, Mee Goreng, House Fried Rice, Spicy Fried Rice, Pineapple Fried Rice, Nasi Goreng
+- "Noodle Soup" — menu items with shared protein options: Noodle Soup, Sour and Spicy Noodle Soup
+- "From the Wok" — menu items with shared protein options: Basil, Cashew Nut, Ginger, Garlic, Sambal, Sweet and Sour, Broccoli
+- "Curry" — menu items with shared protein options: Rendang, Red Curry, Green Curry, Penang Curry, Mango Curry, Yellow Curry, Masaman Curry, Jungle Curry, Pineapple Curry
+- "Side Dishes" — menu items: Fried Egg, Jasmine Rice, Sub Brown Rice, Add Tofu, Thai Sticky Rice, Steamed Vegetables, Brown Rice, Peanut Sauce, Prik Nam Pla, Roti
+- "Dessert" — menu items: Mango sticky Rice, Fried banana, Coconut Pudding
+- "Beverages" — menu items: Thai Ice tea, Coke, Diet Coke, Sprite, Ginger ale, Perrier 500ml, Mango Juice, Lychee Juice
 - call to action for daily specials
 
 ## add-a-new-page-for-newsletter-signup.html → /add-a-new-page-for-newsletter-signup
