@@ -38,7 +38,7 @@ contains:
 title: Maganlal Bhakhri Shak Wala - Authentic Bhakhri &amp; Shak in Mehsana | Takeout &amp; Dine-in
 purpose: This page displays the restaurant's full menu, categorized into sections like Appetizers, Main Course, and Beverages. It also includes a…
 contains:
-- "Appetizer" — menu items: Umang, Vegetable Spring Roll, Chicken Cashew Wrap, Roti Canai, Crab Rangoon, Curry Puff, Po Pia Sod, Shrimp Summer Roll, Táo Hoo Tord, Dumpling, Chicken Satay, Chicken Wing, Lime Chili Shrimp, Crispy Calamari, Kong Tod
+- "Appetizer" — menu items: Edamame, Vegetable Spring Roll, Chicken Cashew Wrap, Roti Canai, Crab Rangoon, Curry Puff, Po Pia Sod, Shrimp Summer Roll, Táo Hoo Tord, Dumpling, Chicken Satay, Chicken Wing, Lime Chili Shrimp, Crispy Calamari, Kong Tod
 - "Soup" — menu items: Tom Yum Goong, Tom Kha Gai, Sweet Corn Soup, Vegetable Soup
 - "Salad" — menu items: Thai Salad, Somtum, Larb, Nua Nam Tok, Duck Salad, Yum Woon Sen
 - "Chef Special" — menu items: Sizzling Pancake, Seafood Delight, Pla Rad Prik, Pla Sam Rod, Salmon Mango Curry, Steamed Ginger Fish, Pineapple Duck Curry, Duck Choo Chee, Duck Ga Prow, Peanut Shrimp Curry, Pra Raam Chicken, Shaking Beef, Laksa Shrimp, Garlic Eggplant Asparagus
