@@ -46,7 +46,7 @@ contains:
 - "Noodle Soup" — menu items with shared protein options: Noodle Soup, Sour and Spicy Noodle Soup
 - "From the Wok" — menu items with shared protein options: Basil, Cashew Nut, Ginger, Garlic, Sambal, Sweet and Sour, Broccoli
 - "Curry" — menu items with shared protein options: Rendang, Red Curry, Green Curry, Penang Curry, Mango Curry, Yellow Curry, Masaman Curry, Jungle Curry, Pineapple Curry
-- "Side Dishes" — menu items: Fried Egg, Jasmine Rice, Sub Brown Rice, Add Tofu, Thai Sticky Rice, Steamed Vegetables, Brown Rice, Peanut Sauce, Prik Nam Pla, Roti
+- "Side Dishes" — menu items: Fried Egg, Jasmine Rice, Sub Brown Rice, Add Tofu, Thai Sticky Rice, Steamed Vegetables, Brown Rice, Peanut Sauce, Prik Nam Pla, Roti, Chicken
 - "Dessert" — menu items: Mango sticky Rice, Fried banana, Coconut Pudding
 - "Beverages" — menu items: Thai Ice tea, Coke, Diet Coke, Sprite, Ginger ale, Perrier 500ml, Mango Juice, Lychee Juice
 - call to action for daily specials
