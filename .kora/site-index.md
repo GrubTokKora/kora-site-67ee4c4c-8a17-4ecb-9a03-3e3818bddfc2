@@ -8,6 +8,7 @@ contains:
 - `#gallery` — gallery of restaurant images with a link to Instagram
 - `#reviews` — customer reviews with aggregate rating and individual review cards
 - `#visit-teaser` — visit teaser section with restaurant location and links to hours and contact pages
+- `#booking` — online booking calendar embed for scheduling a visit
 - `#instagram-feed` — live Instagram feed displaying recent posts and link to profile
 
 ## about.html → /about
