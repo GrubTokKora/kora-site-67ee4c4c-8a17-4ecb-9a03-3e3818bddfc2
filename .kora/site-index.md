@@ -3,7 +3,7 @@ title: Maganlal Bhakhri Shak Wala - Authentic Bhakhri &amp; Shak in Mehsana | Ta
 purpose: The main landing page for the business, providing an overview of the restaurant, its offerings, and customer reviews.
 contains:
 - `#hero` — hero section with restaurant name, tagline, call to action buttons, and rating
-- `#about` — about section with restaurant story and a link to the about page
+- `#about` — about section with restaurant story, chef Mann Prajapati, awards, and a link to the about page
 - `#menu-teaser` — menu teaser section with a brief description of the menu and a link to the menu page
 - `#gallery` — gallery of restaurant images with a link to Instagram
 - `#reviews` — customer reviews with aggregate rating and individual review cards
