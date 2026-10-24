@@ -28,6 +28,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta content="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/6b8ae00f-9293-46bb-ac0a-80d50fe3d48c/1779360880_c3lc3k.jpg" property="og:image"/>
 <link as="image" href="https://deveusblob.blob.core.windows.net/kora-business-images/user-media/67ee4c4c-8a17-4ecb-9a03-3e3818bddfc2/6b8ae00f-9293-46bb-ac0a-80d50fe3d48c/1779360880_c3lc3k.jpg" rel="preload"/>
 <link href="assets/styles.css" rel="stylesheet"/>
+<script>
+  (function() {
+    try {
+      var stored = localStorage.getItem('site-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) {}
+  })();
+</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -737,6 +750,248 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     /* =============================================
+       SMOOTH THEME TRANSITIONS & DARK MODE
+       ============================================= */
+    html {
+      transition: background-color 350ms cubic-bezier(0.4, 0, 0.2, 1), color 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    body,
+    .bg-white,
+    .bg-secondary,
+    .card,
+    .menu-card,
+    .review-card,
+    .hero-card,
+    .gallery-section,
+    .reviews-section,
+    .gallery-bottom-band,
+    .site-header,
+    .site-footer {
+      transition: background-color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+                  color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html.theme-transitioning,
+    html.theme-transitioning *,
+    html.theme-transitioning *::before,
+    html.theme-transitioning *::after {
+      transition: background-color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+                  color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1),
+                  fill 350ms cubic-bezier(0.4, 0, 0.2, 1),
+                  stroke 350ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+      transition-delay: 0s !important;
+    }
+
+    [data-theme="dark"] {
+      --c-white:     #111827;
+      --c-secondary: #1a2232;
+      --c-dark:      #f8fafc;
+      --c-mid:       #94a3b8;
+      --c-border:    #2e384d;
+    }
+
+    [data-theme="dark"] body {
+      background-color: #0b0f19;
+      color: #f1f5f9;
+    }
+
+    [data-theme="dark"] .bg-white {
+      background-color: #111827;
+    }
+    [data-theme="dark"] .bg-secondary {
+      background-color: #1a2232;
+    }
+    [data-theme="dark"] .site-header {
+      background-color: #0b0f19;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    [data-theme="dark"] .nav-mobile {
+      background: #0b0f19;
+    }
+    [data-theme="dark"] .hero-card {
+      background: rgba(17, 24, 39, 0.92);
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
+    }
+    [data-theme="dark"] .hero-headline {
+      color: #f8fafc;
+    }
+    [data-theme="dark"] .hero-sub {
+      color: #cbd5e1;
+    }
+    [data-theme="dark"] .hero-meta-rating {
+      border-left-color: rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+    }
+    [data-theme="dark"] .section-label {
+      background: rgba(255, 255, 255, 0.12);
+      color: #f1f5f9;
+    }
+    [data-theme="dark"] .section-divider {
+      background: #f8fafc;
+    }
+    [data-theme="dark"] .btn-primary {
+      background-color: #f8fafc;
+      color: #0f172a;
+      border-color: #f8fafc;
+    }
+    [data-theme="dark"] .btn-primary:hover {
+      background-color: #e2e8f0;
+      border-color: #e2e8f0;
+      color: #0f172a;
+    }
+    [data-theme="dark"] .btn-outline-dark {
+      color: #f8fafc;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+    [data-theme="dark"] .btn-outline-dark:hover {
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+    [data-theme="dark"] .gallery-section {
+      background-color: #111827;
+    }
+    [data-theme="dark"] .gallery-item {
+      background: #1f293d;
+    }
+    [data-theme="dark"] .gallery-bottom-band {
+      background: #1a2232;
+    }
+    [data-theme="dark"] .gallery-bottom-band-title {
+      color: #f8fafc;
+    }
+    [data-theme="dark"] .gallery-bottom-band-sub {
+      color: #94a3b8;
+    }
+    [data-theme="dark"] .gallery-instagram-link {
+      color: #f8fafc;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+    [data-theme="dark"] .gallery-instagram-link:hover {
+      background: #f8fafc;
+      color: #0f172a;
+    }
+    [data-theme="dark"] .reviews-section {
+      background-color: #1a2232;
+    }
+    [data-theme="dark"] .review-card {
+      background: #111827;
+      border-color: #2e384d;
+    }
+    [data-theme="dark"] .review-card:hover {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+    [data-theme="dark"] .review-card::before {
+      background: #f8fafc;
+    }
+    [data-theme="dark"] .review-quote-mark {
+      color: rgba(255, 255, 255, 0.12);
+    }
+    [data-theme="dark"] .review-text {
+      color: #cbd5e1;
+    }
+    [data-theme="dark"] .review-author-name {
+      color: #f8fafc;
+    }
+    [data-theme="dark"] .review-author-row {
+      border-color: #2e384d;
+    }
+    [data-theme="dark"] .review-avatar {
+      background: rgba(255, 255, 255, 0.1);
+      color: #f8fafc;
+    }
+    [data-theme="dark"] .reviews-trust-label {
+      color: #94a3b8;
+    }
+    [data-theme="dark"] .reviews-trust-count {
+      color: #cbd5e1;
+    }
+    [data-theme="dark"] .float-call {
+      background: #1e293b;
+      color: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    [data-theme="dark"] .float-call:hover {
+      background: #334155;
+    }
+    [data-theme="dark"] .site-footer {
+      background-color: #070a10;
+    }
+
+    /* --- Theme Toggle Button --- */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--c-white);
+      cursor: pointer;
+      padding: 0;
+      transition: background-color 200ms ease, transform 200ms ease, border-color 200ms ease;
+    }
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: scale(1.06);
+    }
+    .theme-toggle:active {
+      transform: scale(0.94);
+    }
+    .theme-toggle:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
+    .theme-icon-sun,
+    .theme-icon-moon {
+      width: 18px;
+      height: 18px;
+      transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .theme-toggle:hover .theme-icon-sun,
+    .theme-toggle:hover .theme-icon-moon {
+      transform: rotate(15deg);
+    }
+    html:not([data-theme="dark"]) .theme-icon-sun {
+      display: none;
+    }
+    html:not([data-theme="dark"]) .theme-icon-moon {
+      display: block;
+    }
+    html[data-theme="dark"] .theme-icon-sun {
+      display: block;
+    }
+    html[data-theme="dark"] .theme-icon-moon {
+      display: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html,
+      html.theme-transitioning,
+      html.theme-transitioning *,
+      body,
+      .bg-white,
+      .bg-secondary,
+      .card,
+      .menu-card,
+      .review-card,
+      .hero-card,
+      .gallery-section,
+      .reviews-section,
+      .gallery-bottom-band,
+      .site-header,
+      .site-footer {
+        transition: none !important;
+      }
+    }
+
+    /* =============================================
        FLOATING CALL BUTTON (bottom-left)
        ============================================= */
     .float-call {
@@ -831,6 +1086,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a class="nav-link" href="contact.html">Contact</a>
 <a class="nav-link" href="add-a-new-page-for-newsletter-signup.html">Newsletter</a>
 </nav>
+<div class="header-actions" style="display:flex; align-items:center; gap:12px;">
+<!-- Theme Toggle -->
+<button aria-label="Switch to dark mode" class="theme-toggle" id="themeToggle" title="Toggle color theme" type="button">
+<svg aria-hidden="true" class="theme-icon-moon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg aria-hidden="true" class="theme-icon-sun" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
 <!-- Desktop CTA -->
 <a class="btn btn-outline nav-cta" href="tel:+918490082336" style="padding:10px 20px; font-size:0.8125rem;">
 <svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="15">
@@ -846,6 +1119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </button>
 </div>
 </div>
+</div>
 <!-- Mobile nav drawer -->
 <nav aria-label="Mobile navigation" class="nav-mobile" id="navMobile">
 <a class="nav-link" href="index.html">Home</a>
@@ -854,6 +1128,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a class="nav-link" href="hours.html">Hours</a>
 <a class="nav-link" href="contact.html">Contact</a>
 <a class="nav-link" href="add-a-new-page-for-newsletter-signup.html">Newsletter</a>
+<button class="btn btn-outline mobile-theme-btn" id="mobileThemeToggle" style="margin-top:12px; width:100%; justify-content:center; display:flex;" type="button">
+<span class="mobile-theme-text">Switch Mode</span>
+</button>
 <a class="btn btn-outline" href="tel:+918490082336">Order Online Now</a>
 </nav>
 </header>
@@ -2309,7 +2586,7 @@ View on Instagram
 </footer>
 </div><!-- /.site-wrapper -->
 <!-- =============================================
-     MOBILE NAV TOGGLE SCRIPT
+     MOBILE NAV TOGGLE SCRIPT & THEME SWITCHER
      ============================================= -->
 <script>
   (function() {
@@ -2331,6 +2608,50 @@ View on Instagram
         toggle.setAttribute('aria-expanded', 'false');
       });
     });
+  })();
+
+  (function() {
+    var themeToggle = document.getElementById('themeToggle');
+    var mobileThemeToggle = document.getElementById('mobileThemeToggle');
+
+    function updateThemeUi(theme) {
+      var isDark = theme === 'dark';
+      var nextLabel = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+      if (themeToggle) {
+        themeToggle.setAttribute('aria-label', nextLabel);
+        themeToggle.setAttribute('title', nextLabel);
+      }
+      if (mobileThemeToggle) {
+        var labelEl = mobileThemeToggle.querySelector('.mobile-theme-text');
+        if (labelEl) {
+          labelEl.textContent = isDark ? '☀️ Switch to Light Mode' : '🌙 Switch to Dark Mode';
+        }
+      }
+    }
+
+    function toggleTheme() {
+      document.documentElement.classList.add('theme-transitioning');
+      var current = document.documentElement.getAttribute('data-theme') || 'light';
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('site-theme', next);
+      } catch (e) {}
+      updateThemeUi(next);
+      window.setTimeout(function() {
+        document.documentElement.classList.remove('theme-transitioning');
+      }, 450);
+    }
+
+    var currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    updateThemeUi(currentTheme);
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
+    }
+    if (mobileThemeToggle) {
+      mobileThemeToggle.addEventListener('click', toggleTheme);
+    }
   })();
 </script>
 <!-- =============================================
