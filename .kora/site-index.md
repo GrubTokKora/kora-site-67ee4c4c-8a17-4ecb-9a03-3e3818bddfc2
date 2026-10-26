@@ -7,7 +7,7 @@ contains:
 - `#menu-teaser` — menu teaser section with a brief description of the menu and a link to the menu page
 - `#gallery` — gallery of restaurant images with a link to Instagram
 - `#reviews` — customer reviews with aggregate rating and individual review cards
-- `#events` — events section featuring calendar and list views of upcoming events: Dhurandhar 2 Special Lunch, Live Garba Night, Grand Opening: Our New Water Park Branch!, Live Wooden Pizza Night, Live Music Night, Navaratri Garba Night
+- `#events` — events section featuring calendar and list views of upcoming events: Dhurandhar 2 Special Lunch, Live Garba Night, Grand Opening: Our New Water Park Branch!, Live Wooden Pizza Night, Live Music Night, Navaratri Garba Night, Testing Event 1
 - `#visit-teaser` — visit teaser section with restaurant location and links to hours and contact pages
 - `#booking` — online booking calendar embed for scheduling a visit
 - `#instagram-feed` — live Instagram feed displaying recent posts and link to profile
