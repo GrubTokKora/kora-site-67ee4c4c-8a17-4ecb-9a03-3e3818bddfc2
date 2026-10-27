@@ -3076,6 +3076,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         when_label: "Oct 28 – Oct 31, 2026 · 12:00 PM – 2:30 PM",
         short_description: "Be among the first to taste our new lunch menu at Gayatri Restaurant. Join us from Oct 28 to Oct 31 and share your feedback over a fresh, wholesome meal.",
         full_description: "We are testing our new lunch menu, and we would love for you to try it with us. Over four days, guests can sample fresh, thoughtfully prepared dishes made with wholesome ingredients.\n\nWhat to expect:\n- A first taste of new lunch options at Maganlal Bhakhri Shak Wala, Gayatri Restaurant\n- Fresh, healthy meals that suit the whole family\n- A relaxed, friendly setting where your feedback helps shape the final menu\n\nWhether you are a parent looking for nourishing midday meals or simply curious about what is new, stop by between 12:00 PM and 2:30 PM from October 28 to October 31, 2026. Fresh food, friendly faces."
+      },
+      {
+        id: "54f21298-2ca6-41fc-a9bb-5b13a3523f6f",
+        title: "Diwali Celebration",
+        category: "holiday",
+        location_text: "",
+        hero_image_url: "",
+        ticket_url: "",
+        start_date: "",
+        start_time: "",
+        end_date: "",
+        end_time: "",
+        all_day: false,
+        when_label: "",
+        short_description: "Celebrate the festival of lights with wholesome festive specials and fresh, nourishing flavors for the whole family.",
+        full_description: "Join us at Maganlal Bhakhri Shak Wala, Gayatri Restaurant as we celebrate Diwali with warm hospitality and delicious, wholesome food. We are bringing together traditional festive cheer and our commitment to clean, fresh cooking so you and your loved ones can celebrate mindfully.\n\nEnjoy an array of specially prepared festive dishes crafted with high-quality ingredients, traditional recipes, and pure care. Whether you are gathering for lunch or dining together in the evening, our welcoming space offers the perfect setting for health-conscious parents and families to share joy and good food this Diwali.\n\nWe look forward to welcoming your family and celebrating the festive season together."
       }
     ];
 
@@ -3265,11 +3281,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
 
         var locHtml = ev.location_text ? '<div class="event-card-loc"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>' + ev.location_text + '</span></div>' : '';
+        var whenHtml = ev.when_label ? '<p class="event-card-when">' + ev.when_label + '</p>' : '';
 
         card.innerHTML = mediaHtml +
           '<div class="event-card-body">' +
           (ev.category ? '<span class="event-tag">' + ev.category + '</span>' : '') +
-          '<p class="event-card-when">' + ev.when_label + '</p>' +
+          whenHtml +
           '<h3 class="event-card-title">' + ev.title + '</h3>' +
           locHtml +
           '<p class="event-card-desc">' + (ev.short_description || '') + '</p>' +
@@ -3322,6 +3339,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       modalTitle.textContent = ev.title;
       modalWhen.textContent = ev.when_label;
+      if (modalWhen.parentElement) {
+        modalWhen.parentElement.style.display = ev.when_label ? 'flex' : 'none';
+      }
       modalLocation.textContent = ev.location_text || 'Maganlal Bhakhri Shak Wala';
       modalDesc.textContent = ev.full_description || ev.short_description || '';
 
