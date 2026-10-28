@@ -1,6 +1,6 @@
 # Maganlal Bhakhri Shak Wala
 
-> Maganlal Bhakhri Shak Wala is a traditional Gujarati vegetarian restaurant offering a variety of local dishes, thalis, and Indian staples. The establishment specializes in bhakhri, which are thick flatbreads served alongside various shaks and vegetable preparations.
+> Maganlal Bhakhri Shak Wala is a traditional Gujarati vegetarian restaurant offering fresh food. The establishment specializes in bhakhri and various vegetable shaks.
 
 ## Menu
 A traditional Gujarati vegetarian restaurant specializing in bhakhri (thick flatbreads) served with various shaks (vegetable preparations). The menu likely features a range of local dishes, thalis, and other Indian staples.
@@ -11,7 +11,7 @@ A traditional Gujarati vegetarian restaurant specializing in bhakhri (thick flat
 
 ## Location & Contact
 - Phone: +918490082336
-- Email: mann.prajapati@kysz.tech
+- Email: harsh.prajapati@kysz.tech
 - Website: https://bedfordthai.com
 
 ## Hours
